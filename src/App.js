@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Menu from './components/Menu';
@@ -13,6 +12,7 @@ import AdminMecanismos from './pages/Admin/AdminMecanismos';
 import AdminTiposNotificacion from './pages/Admin/AdminTiposNotificacion';
 import AdminTiemposRespuesta from './pages/Admin/AdminTiemposRespuesta';
 import AdminTramites from './pages/Admin/AdminTramites';
+import AdminEstadosPQRSD from './pages/Admin/AdminEstadosPQRSD';
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
             <Route path="/admin-tipos-notificacion"><AdminTiposNotificacion/></Route>
             <Route path="/admin-tiempos-respuesta"><AdminTiemposRespuesta/></Route>
             <Route path="/admin-empresas-transporte"><AdminEmpresasTransportadoras/></Route>
+            <Route path="/admin-estados-pqrsd"><AdminEstadosPQRSD/></Route>
             <Route path="/admin-tramites"><AdminTramites/></Route>
           </Switch>
         <Footer/>

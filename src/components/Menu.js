@@ -103,6 +103,12 @@ const Menu = () => {
                     <p>Trámites</p>
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link to="/admin-estados-pqrsd" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tramites' ? "active-item":""}`}>
+                    <i className="far fa-circle nav-icon" />
+                    <p>Estados de PQRSD</p>
+                  </Link>
+                </li>
               </ul>
             </li>
           </ul>

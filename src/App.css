@@ -36,6 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Estilos personalizados */
+
 .bg-active-option{
   background: none;
 }
@@ -84,6 +88,7 @@
 
 .btn-institucional{
   background-color: #22326E;
+  color: #fff;
 }
 .btn-institucional:hover{
   background-color: #FF9425;
