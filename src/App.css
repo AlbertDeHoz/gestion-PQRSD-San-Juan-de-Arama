@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+.bg-active-option{
+  background: none;
+}
+.bg-active-option:hover{
+  background: #FF9425 !important;
+}
+.bg-active-option:active{
+  background: #FF9425 !important;
+}
+.bg-active-option:focus{
+  background: #FF9425 !important;
+}
+
+.active-option{
+  background: #FF9425;
+  color:#fff !important;
+}
+.active-item{
+  background: #fff;
+  color: #22326E !important;
+}
+
+.bg-active-item:hover{
+  background: #fff !important;
+  color: #22326E !important;
+}
+.bg-active-item:active{
+  background: #fff;
+  color: #22326E;
+}
+.bg-active-item:focus{
+  background: #fff !important;
+  color: #22326E !important;
+}
+
+.bg-institucional{
+  background-color: #22326E !important;
+}
+
+.text-blue-institucional{
+  color: #22326E !important;
+}
+.text-orange-institucional{
+  color: #FF9425 !important;
+}
+
+.btn-institucional{
+  background-color: #22326E;
+}
+.btn-institucional:hover{
+  background-color: #FF9425;
+}
+.btn-institucional:active{
+  background-color: #fca242;
+}

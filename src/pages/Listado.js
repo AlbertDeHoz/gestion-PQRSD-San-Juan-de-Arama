@@ -1,25 +1,42 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
+import { useLocation } from 'react-router-dom';
 
-export default class Listado extends Component {
-    render() {
-        return (
+const Listado = () => {
+    const url = useLocation();
+      return (
             <div>
                 <div className="content-wrapper pt-4">
+                    {/* Content Header (Page header) */}
+                    <div className="content-header">
+                        <div className="container-fluid">
+                            <div className="row mb-2">
+                            <div className="col-sm-6">
+                                <h1 className="m-0 text-blue-institucional">Listado de PQRSDs</h1>
+                            </div>{/* /.col */}
+                            <div className="col-sm-6">
+                                <ol className="breadcrumb float-sm-right">
+                                <li className="breadcrumb-item active">{url.pathname}</li>
+                                </ol>
+                            </div>{/* /.col */}
+                            </div>{/* /.row */}
+                        </div>{/* /.container-fluid */}
+                    </div>
+                    {/* /.content-header */}
                     {/* Main table */}
                     <section className="content">
                         <div className="container-fluid">
                         <div className="row">
                             <div className="col-12">
                             <div className="card">
-                                <div className="card-header">
-                                <h3 className="card-title">Listado total de PQRSDs San Juan de Arama</h3>
+                                <div className="card-header d-flex justify-content-between">
+                                    <h3 className="card-title text-blue-institucional">Listado total de PQRSDs San Juan de Arama</h3>
+                                    <button class="btn btn-block btn-institucional text-white btn-xs w-25 ml-auto">Nueva PQRSD</button>
                                 </div>
                                 {/* /.card-header */}
                                 <div className="card-body">
                                 <table id="example2" className="table table-bordered table-hover">
                                     <thead>
-                                    <tr>
+                                    <tr className="text-blue-institucional">
                                         <th>Rendering engine</th>
                                         <th>Browser</th>
                                         <th>Platform(s)</th>
@@ -460,4 +477,4 @@ export default class Listado extends Component {
             </div>
         )
     }
-}
+    export default Listado;

@@ -4547,7 +4547,7 @@ input[type="button"].btn-block {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: #FF9425;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -13380,7 +13380,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 [class*="sidebar-light-"] .nav-sidebar > .nav-item > .nav-link:active, [class*="sidebar-light-"] .nav-sidebar > .nav-item > .nav-link:focus {
-  color: #343a40;
+  color: #FF9425;
 }
 
 [class*="sidebar-light-"] .nav-sidebar > .nav-item.menu-open > .nav-link,
@@ -13465,13 +13465,13 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link:active {
-  color: #c2c7d0;
+  color: #FF9425;
 }
 
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item.menu-open > .nav-link,
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link,
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #FF9425;
   color: #fff;
 }
 
@@ -15734,7 +15734,7 @@ body.text-sm .control-sidebar {
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-top-color: transparent;
-  color: #fff;
+  color: #FF9425;
 }
 
 .control-sidebar-dark .nav-tabs .nav-link.active {

@@ -20,6 +20,7 @@ function App() {
         <Header/>
         <Menu/>
           <Switch>
+            <Route path="/" exact><Dashboard/></Route>
             <Route path="/Dashboard"><Dashboard/></Route>
             <Route path="/Listado"><Listado/></Route>
             <Route path="/admin-dependencias"><AdminDependencias/></Route>

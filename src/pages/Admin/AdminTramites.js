@@ -65,7 +65,7 @@ export default class Admintramites extends Component {
                             {/* /.row */}
                             <div className="d-flex justify-content-end">
                                 <div className="d-flex justify-content-end w-25">
-                                    <a class="btn btn-block btn-secondary btn-xs w-50">Nueva</a>
+                                    <a class="btn btn-block bg-institucional text-white btn-xs w-50">Nueva</a>
                                 </div>
                             </div>
                         </div>

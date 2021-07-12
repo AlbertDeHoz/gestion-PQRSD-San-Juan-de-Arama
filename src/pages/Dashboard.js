@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { useLocation } from 'react-router-dom';
 
-export default class Dashboard extends Component {
-    render() {
-        return (
+const Dashboard = () => {
+  const url = useLocation();
+    return (
             <div>
   <div className="content-wrapper">
     {/* Content Header (Page header) */}
@@ -10,12 +11,11 @@ export default class Dashboard extends Component {
       <div className="container-fluid">
         <div className="row mb-2">
           <div className="col-sm-6">
-            <h1 className="m-0 text-dark">Dashboard</h1>
+            <h1 className="m-0 text-blue-institucional">Dashboard</h1>
           </div>{/* /.col */}
           <div className="col-sm-6">
             <ol className="breadcrumb float-sm-right">
-              <li className="breadcrumb-item"><a href="#">Home</a></li>
-              <li className="breadcrumb-item active">Dashboard v1</li>
+              <li className="breadcrumb-item active">{url.pathname}</li>
             </ol>
           </div>{/* /.col */}
         </div>{/* /.row */}
@@ -30,7 +30,7 @@ export default class Dashboard extends Component {
           <div className="col-lg-3 col-6">
             {/* small box */}
             <div className="info-box shadow bg-white h-100">
-              <div className="inner pl-3 pt-3 text-gray">
+              <div className="inner pl-3 pt-3 text-blue-institucional">
                 <h3>150</h3>
                 <p>Total de PQRSDs</p>
               </div>
@@ -44,21 +44,21 @@ export default class Dashboard extends Component {
           <div className="col-lg-3 col-6">
             {/* small box */}
             <div className="info-box shadow bg-white h-100">
-              <div className="inner pl-3 pt-3 text-gray">
+              <div className="inner pl-3 pt-3 text-blue-institucional">
                 <h3>31</h3>
                 <p>PQRSDs sin respuesta</p>
               </div>
               <div className="icon">
                 <i className="ion ion-person-add" />
               </div>
-              <a href="#" className="small-box-footer text-gray ml-auto mr-3 pt-5">Ver <i className="fas fa-arrow-circle-right pt-3 text-gray pl-3" /></a>
+              <a href="#" className="small-box-footer text-blue-institucional ml-auto mr-3 pt-5">Ver <i className="fas fa-arrow-circle-right pt-3 text-blue-institucional pl-3" /></a>
             </div>
           </div>
           {/* ./col */}
           <div className="col-lg-3 col-6">
             {/* small box */}
             <div className="info-box shadow bg-white h-100">
-              <div className="inner pl-3 pt-3 text-gray">
+              <div className="inner pl-3 pt-3 text-blue-institucional">
                 <h3>86<sup style={{fontSize: 20}}>%</sup></h3>
                 <p>PQRSD respondidas</p>
               </div>
@@ -72,14 +72,14 @@ export default class Dashboard extends Component {
           <div className="col-lg-3 col-6">
             {/* small box */}
             <div className="info-box shadow bg-white h-100">
-              <div className="inner pl-3 pt-3 text-gray">
+              <div className="inner pl-3 pt-3 text-blue-institucional">
                 <h3>30</h3>
                 <p>Despacho</p>
               </div>
               <div className="icon">
                 <i className="ion ion-pie-graph" />
               </div>
-              <a href="#" className="small-box-footer text-gray ml-auto mr-3 pt-5">Ver <i className="fas fa-arrow-circle-right pt-3 text-gray pl-3" /></a>
+              <a href="#" className="small-box-footer text-blue-institucional ml-auto mr-3 pt-5">Ver <i className="fas fa-arrow-circle-right pt-3 text-blue-institucional pl-3" /></a>
             </div>
           </div>
           {/* ./col */}
@@ -90,56 +90,56 @@ export default class Dashboard extends Component {
           <div className="col-lg-3 col-6">
             {/* small box */}
             <div className="info-box shadow bg-white h-100">
-              <div className="inner pl-3 pt-3 text-gray">
+              <div className="inner pl-3 pt-3 text-blue-institucional">
                 <h3>30</h3>
                 <p>Planeación...</p>
               </div>
               <div className="icon">
                 <i className="ion ion-pie-graph" />
               </div>
-              <a href="#" className="small-box-footer text-gray pt-5 mr-3 ml-auto">Ver <i className="fas fa-arrow-circle-right pt-3 text-gray pl-3" /></a>
+              <a href="#" className="small-box-footer text-blue-institucional pt-5 mr-3 ml-auto">Ver <i className="fas fa-arrow-circle-right pt-3 text-blue-institucional pl-3" /></a>
             </div>
           </div>
           {/* ./col */}
           <div className="col-lg-3 col-6">
             {/* small box */}
             <div className="info-box shadow bg-white h-100">
-              <div className="inner pl-3 pt-3 text-gray">
+              <div className="inner pl-3 pt-3 text-blue-institucional">
                 <h3>30</h3>
                 <p>Gobierno...</p>
               </div>
               <div className="icon">
                 <i className="ion ion-pie-graph" />
               </div>
-              <a href="#" className="small-box-footer text-gray pt-5 mr-3 ml-auto">Ver <i className="fas fa-arrow-circle-right pt-3 text-gray pl-3" /></a>
+              <a href="#" className="small-box-footer text-blue-institucional pt-5 mr-3 ml-auto">Ver <i className="fas fa-arrow-circle-right pt-3 text-blue-institucional pl-3" /></a>
             </div>
           </div>
           {/* ./col */}
           <div className="col-lg-3 col-6">
             {/* small box */}
             <div className="info-box shadow bg-white h-100">
-              <div className="inner pl-3 pt-3 text-gray">
+              <div className="inner pl-3 pt-3 text-blue-institucional">
                 <h3>30</h3>
                 <p>Financiera...</p>
               </div>
               <div className="icon">
                 <i className="ion ion-pie-graph" />
               </div>
-              <a href="#" className="small-box-footer text-gray pt-5 mr-3 ml-auto">Ver <i className="fas fa-arrow-circle-right pt-3 text-gray pl-3" /></a>
+              <a href="#" className="small-box-footer text-blue-institucional pt-5 mr-3 ml-auto">Ver <i className="fas fa-arrow-circle-right pt-3 text-blue-institucional pl-3" /></a>
             </div>
           </div>
           {/* ./col */}
           <div className="col-lg-3 col-6">
             {/* small box */}
             <div className="info-box shadow bg-white h-100">
-              <div className="inner pl-3 pt-3 text-gray">
+              <div className="inner pl-3 pt-3 text-blue-institucional">
                 <h3>30</h3>
                 <p>Social...</p>
               </div>
               <div className="icon">
                 <i className="ion ion-pie-graph" />
               </div>
-              <a href="#" className="small-box-footer text-gray pt-5 mr-3 ml-auto">Ver <i className="fas fa-arrow-circle-right pt-3 text-gray pl-3" /></a>
+              <a href="#" className="small-box-footer text-blue-institucional pt-5 mr-3 ml-auto">Ver <i className="fas fa-arrow-circle-right pt-3 text-blue-institucional pl-3" /></a>
             </div>
           </div>
           {/* ./col */}
@@ -152,7 +152,7 @@ export default class Dashboard extends Component {
     <div className="container-fluid">
       <div className="row mb-2">
         <div className="col-sm-6">
-          <h1>Listado PQRSDs San Juan de Arama</h1>
+          <h1 className="text-blue-institucional">Listado PQRSDs San Juan de Arama</h1>
         </div>
       </div>
     </div>{/* /.container-fluid */}
@@ -164,13 +164,13 @@ export default class Dashboard extends Component {
         <div className="col-12">
           <div className="card">
             <div className="card-header">
-              <h3 className="card-title">Listado total de PQRSDs San Juan de Arama</h3>
+              <h3 className="card-title text-blue-institucional">Listado total de PQRSDs San Juan de Arama</h3>
             </div>
             {/* /.card-header */}
             <div className="card-body">
               <table id="example2" className="table table-bordered table-hover">
                 <thead>
-                  <tr>
+                  <tr className="text-blue-institucional">
                     <th>Rendering engine</th>
                     <th>Browser</th>
                     <th>Platform(s)</th>
@@ -615,5 +615,5 @@ export default class Dashboard extends Component {
 
         )
     }
-}
+    export default Dashboard;
 

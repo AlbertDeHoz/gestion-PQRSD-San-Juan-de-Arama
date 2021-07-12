@@ -3,30 +3,35 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useRouteMatch,
+  useLocation
 } from "react-router-dom";
+import Dashboard from '../pages/Dashboard';
 
-export default class Menu extends Component {
-    render() {
+const Menu = () => {
+      const url = useLocation();
         return (
           <div>
-  <aside className="main-sidebar sidebar-dark-primary elevation-4">
+  <aside className="main-sidebar bg-institucional elevation-4">
     {/* Brand Logo */}
       <Link to="/Dashboard" className="brand-link">
-        <img src="dist/img/Logosj.png" alt="Recuperemos San Juan" className="img-circle elevation-2" width="60"/>
-        <div>
-          <span className="brand-text font-weight-light mt-3">Gestión de PQRSD<br/>San Juan de Arama</span>
+        <div className="d-flex">
+          <img src="dist/img/Logosj.png" alt="Recuperemos San Juan" className="img-circle elevation-2" width="60"/>
+          <div className="ml-3">
+            <span className="text-md text-white font-weight-bold mt-3">Gestión de PQRSD <br/>San Juan de Arama</span>
+          </div>
         </div>
       </Link>
       {/* Sidebar */}
       <div className="sidebar">
-        {/* Sidebar user panel (optional) */}
+        {/* Sidebar user panel */}
         <div className="user-panel mt-3 pb-3 mb-3 d-flex">
           <div className="image">
             <img src="dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
           </div>
           <div className="info">
-            <a href="#" className="d-block">User Name</a>
+            <a href="#" className="d-block text-white">User Name</a>
           </div>
         </div>
         {/* Sidebar Menu */}
@@ -35,30 +40,19 @@ export default class Menu extends Component {
             {/* Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library */}
             <li className="nav-item">
-            {/* <a href="./index.html" className="nav-link active">
-                    <i className="nav-icon fas fa-tachometer-alt" />
-                    <p>Dashboard</p>
-                  </a> */}
-              <Link to="/Dashboard" className="nav-link">
+              <Link to="/Dashboard" className={`nav-link  text-white bg-active-option ${url.pathname == '/Dashboard' ? "active-option":""}`}>
                 <i className="nav-icon fas fa-tachometer-alt" />
                 <p>Dashboard</p>
               </Link>
             </li>
             <li className="nav-item">
-              {/* <a href="pages/widgets.html" className="nav-link">
-                <i className="nav-icon fas fa-table" />
-                <p>
-                  Listado PQRSD
-                  <span className="right badge badge-danger">New</span>
-                </p>
-              </a> */}
-              <Link to="/Listado" className="nav-link">
+              <Link to="/Listado" className={`nav-link text-white bg-active-option ${url.pathname == '/Listado' ? "active-option":""}`}>
               <i className="nav-icon fas fa-table" />
                 <p>Listado de PQRSDs</p>
               </Link>
             </li>
             <li className="nav-item has-treeview">
-              <div className="nav-link" style={{cursor: 'pointer'}}>
+              <div className="nav-link bg-active-option" style={{cursor: 'pointer'}}>
                 <i className="nav-icon fas fa-copy text-light" />
                 <p className="text-light">
                   Administración
@@ -68,71 +62,43 @@ export default class Menu extends Component {
               </div>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
-                  {/* <a href="pages/layout/top-nav.html" className="nav-link">
-                    <i className="far fa-circle nav-icon" />
-                    <p>Tipos de PQRSD</p>
-                  </a> */}
-                  <Link to="/admin-tipos-PQRSD" className="nav-link">
+                  <Link to="/admin-tipos-PQRSD" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tipos-PQRSD' ? "active-item":""}`}>
                     <i className="far fa-circle nav-icon" />
                     <p>Tipos de PQRSD</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  {/* <a href="pages/layout/top-nav.html" className="nav-link">
-                    <i className="far fa-circle nav-icon" />
-                    <p>Mecanismos de recepción</p>
-                  </a> */}
-                  <Link to="/admin-mecanismos-recepcion" className="nav-link">
+                  <Link to="/admin-mecanismos-recepcion" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-mecanismos-recepcion' ? "active-item":""}`}>
                     <i className="far fa-circle nav-icon" />
                     <p>Mecanismos de recepción</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  {/* <a href="pages/layout/top-nav.html" className="nav-link">
-                    <i className="far fa-circle nav-icon" />
-                    <p>Dependencias</p>
-                  </a> */}
-                  <Link to="/admin-dependencias" className="nav-link">
+                  <Link to="/admin-dependencias" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-dependencias' ? "active-item":""}`}>
                     <i className="far fa-circle nav-icon" />
                     <p>Dependencias</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  {/* <a href="pages/layout/top-nav.html" className="nav-link">
-                    <i className="far fa-circle nav-icon" />
-                    <p>Tipos de notificación</p>
-                  </a> */}
-                  <Link to="/admin-tipos-notificacion" className="nav-link">
+                  <Link to="/admin-tipos-notificacion" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tipos-notificacion' ? "active-item":""}`}>
                     <i className="far fa-circle nav-icon" />
                     <p>Tipos de notificacion</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  {/* <a href="pages/layout/top-nav.html" className="nav-link">
-                    <i className="far fa-circle nav-icon" />
-                    <p>Tiempos de respuesta</p>
-                  </a> */}
-                  <Link to="/admin-tiempos-respuesta" className="nav-link">
+                  <Link to="/admin-tiempos-respuesta" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tiempos-respuesta' ? "active-item":""}`}>
                     <i className="far fa-circle nav-icon" />
                     <p>Tiempos de respuesta</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  {/* <a href="pages/layout/top-nav.html" className="nav-link">
-                    <i className="far fa-circle nav-icon" />
-                    <p>Empresas transportadoras</p>
-                  </a> */}
-                  <Link to="/admin-empresas-transporte" className="nav-link">
+                  <Link to="/admin-empresas-transporte" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-empresas-transporte' ? "active-item":""}`}>
                     <i className="far fa-circle nav-icon" />
                     <p>Empresas transportadoras</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  {/* <a href="pages/layout/top-nav.html" className="nav-link">
-                    <i className="far fa-circle nav-icon" />
-                    <p>Trámites</p>
-                  </a> */}
-                  <Link to="/admin-tramites" className="nav-link">
+                  <Link to="/admin-tramites" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tramites' ? "active-item":""}`}>
                     <i className="far fa-circle nav-icon" />
                     <p>Trámites</p>
                   </Link>
@@ -149,4 +115,4 @@ export default class Menu extends Component {
 
         )
     }
-}
+export default Menu;
