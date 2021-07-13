@@ -13,6 +13,7 @@ import AdminTiposNotificacion from './pages/Admin/AdminTiposNotificacion';
 import AdminTiemposRespuesta from './pages/Admin/AdminTiemposRespuesta';
 import AdminTramites from './pages/Admin/AdminTramites';
 import AdminEstadosPQRSD from './pages/Admin/AdminEstadosPQRSD';
+import AdminUsuarios from './pages/Admin/AdminUsuarios';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/Dashboard"><Dashboard/></Route>
             <Route path="/Listado"><Listado/></Route>
             <Route path="/admin-dependencias"><AdminDependencias/></Route>
+            <Route path="/admin-usuarios"><AdminUsuarios/></Route>
             <Route path="/admin-tipos-PQRSD"><AdminTiposPQRSD/></Route>
             <Route path="/admin-mecanismos-recepcion"><AdminMecanismos/></Route>
             <Route path="/admin-tipos-notificacion"><AdminTiposNotificacion/></Route>

@@ -40,7 +40,7 @@ const Menu = () => {
             {/* Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library */}
             <li className="nav-item">
-              <Link to="/Dashboard" className={`nav-link  text-white bg-active-option ${url.pathname == '/Dashboard' ? "active-option":""}`}>
+              <Link to="/Dashboard" className={`nav-link  text-white bg-active-option ${url.pathname == '/Dashboard' || url.pathname=='/' ? "active-option":""}`}>
                 <i className="nav-icon fas fa-tachometer-alt" />
                 <p>Dashboard</p>
               </Link>
@@ -61,54 +61,61 @@ const Menu = () => {
                 </p>
               </div>
               <ul className="nav nav-treeview">
+              <li className="nav-item">
+                  <Link to="/admin-usuarios" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-usuarios' ? "active-item":""}`}>
+                    <i className="far fa-check-circle nav-icon" />
+                    <p>Gestión de Usuarios</p>
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <Link to="/admin-tipos-PQRSD" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tipos-PQRSD' ? "active-item":""}`}>
-                    <i className="far fa-circle nav-icon" />
+                    <i className="far fa-check-circle nav-icon" />
                     <p>Tipos de PQRSD</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/admin-mecanismos-recepcion" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-mecanismos-recepcion' ? "active-item":""}`}>
-                    <i className="far fa-circle nav-icon" />
-                    <p>Mecanismos de recepción</p>
+                  <Link to="/admin-mecanismos-recepcion" className={`nav-link text-white bg-active-item d-flex align-items-center ${url.pathname == '/admin-mecanismos-recepcion' ? "active-item":""}`}>
+                    <i className="far fa-check-circle nav-icon" />
+                    <div><p>Mecanismos de recepción</p></div>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/admin-dependencias" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-dependencias' ? "active-item":""}`}>
-                    <i className="far fa-circle nav-icon" />
+                    <i className="far fa-check-circle nav-icon" />
                     <p>Dependencias</p>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/admin-tipos-notificacion" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tipos-notificacion' ? "active-item":""}`}>
-                    <i className="far fa-circle nav-icon" />
+                    <i className="far fa-check-circle nav-icon" />
                     <p>Tipos de notificacion</p>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/admin-tiempos-respuesta" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tiempos-respuesta' ? "active-item":""}`}>
-                    <i className="far fa-circle nav-icon" />
+                    <i className="far fa-check-circle nav-icon" />
                     <p>Tiempos de respuesta</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/admin-empresas-transporte" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-empresas-transporte' ? "active-item":""}`}>
-                    <i className="far fa-circle nav-icon" />
-                    <p>Empresas transportadoras</p>
+                  <Link to="/admin-empresas-transporte" className={`nav-link text-white bg-active-item d-flex align-items-center ${url.pathname == '/admin-empresas-transporte' ? "active-item":""}`}>
+                    <i className="far fa-check-circle nav-icon" />
+                    <div><p>Empresas transportadoras</p></div>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/admin-tramites" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tramites' ? "active-item":""}`}>
-                    <i className="far fa-circle nav-icon" />
+                    <i className="far fa-check-circle nav-icon" />
                     <p>Trámites</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/admin-estados-pqrsd" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tramites' ? "active-item":""}`}>
-                    <i className="far fa-circle nav-icon" />
-                    <p>Estados de PQRSD</p>
+                  <Link to="/admin-estados-pqrsd" className={`nav-link text-white bg-active-item d-flex align-items-center ${url.pathname == '/admin-tramites' ? "active-item":""}`}>
+                    <i className="far fa-check-circle nav-icon" />
+                    <div><p>Estados de PQRSD</p></div>
                   </Link>
                 </li>
+                <br/><br/>
               </ul>
             </li>
           </ul>
