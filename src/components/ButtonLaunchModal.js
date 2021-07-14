@@ -1,4 +1,5 @@
 const ButtonLaunchModal = (props) => {
+  const str="nueva-pqrsd"
   return (
     <div>
       {/* <!-- Button trigger modal --> */}
@@ -6,16 +7,17 @@ const ButtonLaunchModal = (props) => {
         type="button"
         className={props.class}
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target={`#${props.modalId}`}
       >
-        Crear Nueva PQRSD
+      <i class={props.classIcon}></i>
+        {props.name}
       </button>
       {/* <!-- Modal --> */}
       <div
         className="modal fade"
-        id="exampleModal"
+        id={props.modalId}
         tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby={`modal${props.modalId}`}
         aria-hidden="true"
       >
         {props.children}

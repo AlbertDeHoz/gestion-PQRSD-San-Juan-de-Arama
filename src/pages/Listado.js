@@ -33,7 +33,11 @@ const Listado = () => {
                             <div className="card">
                                 <div className="d-flex justify-content-between"><h3 className="card-title text-blue-institucional mt-3 ml-4">Listado total de PQRSDs San Juan de Arama</h3>
                                 <div className="mt-3 mr-4">
-                                <ButtonLaunchModal class="btn btn-block btn-institucional text-white btn-xs ml-auto">
+                                <ButtonLaunchModal
+                                class="btn btn-block btn-institucional text-white btn-xs ml-auto" 
+                                modalId="nuevaPqrsd"
+                                name="Crear Nueva PQRSD"
+                                >
                                     <ModalAddNew />
                                 </ButtonLaunchModal>
                                 </div>
@@ -59,7 +63,12 @@ const Listado = () => {
                                         <td>Win 95+</td>
                                         <td> 4</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
                                                 <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
@@ -72,8 +81,13 @@ const Listado = () => {
                                         <td>Win 95+</td>
                                         <td>5</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -85,8 +99,13 @@ const Listado = () => {
                                         <td>Win 95+</td>
                                         <td>5.5</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -98,8 +117,13 @@ const Listado = () => {
                                         <td>Win 98+</td>
                                         <td>6</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -109,8 +133,13 @@ const Listado = () => {
                                         <td>Win XP SP2+</td>
                                         <td>7</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -120,8 +149,13 @@ const Listado = () => {
                                         <td>Win XP</td>
                                         <td>6</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -131,8 +165,13 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.7</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -142,8 +181,13 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -153,8 +197,13 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -164,8 +213,13 @@ const Listado = () => {
                                         <td>Win 2k+ / OSX.3+</td>
                                         <td>1.9</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -175,8 +229,13 @@ const Listado = () => {
                                         <td>OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -186,8 +245,13 @@ const Listado = () => {
                                         <td>OSX.3+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -197,8 +261,13 @@ const Listado = () => {
                                         <td>Win 95+ / Mac OS 8.6-9.2</td>
                                         <td>1.7</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -208,8 +277,13 @@ const Listado = () => {
                                         <td>Win 98SE+</td>
                                         <td>1.7</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -219,8 +293,13 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -230,8 +309,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -241,8 +325,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.1</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -252,8 +341,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.2</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -263,8 +357,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.3</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -274,8 +373,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.4</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -285,8 +389,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.5</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -296,8 +405,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.6</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -307,8 +421,13 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.1+</td>
                                         <td>1.7</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -318,8 +437,13 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.1+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -329,8 +453,13 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -340,8 +469,13 @@ const Listado = () => {
                                         <td>Gnome</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -351,8 +485,13 @@ const Listado = () => {
                                         <td>OSX.3</td>
                                         <td>125.5</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -362,8 +501,13 @@ const Listado = () => {
                                         <td>OSX.3</td>
                                         <td>312.8</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -373,8 +517,13 @@ const Listado = () => {
                                         <td>OSX.4+</td>
                                         <td>419.3</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -384,8 +533,13 @@ const Listado = () => {
                                         <td>OSX.4+</td>
                                         <td>522.1</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -395,8 +549,13 @@ const Listado = () => {
                                         <td>OSX.4+</td>
                                         <td>420</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -406,8 +565,13 @@ const Listado = () => {
                                         <td>iPod</td>
                                         <td>420.1</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -417,8 +581,13 @@ const Listado = () => {
                                         <td>S60</td>
                                         <td>413</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -428,8 +597,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -439,8 +613,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.2+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -450,8 +629,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.2+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -461,8 +645,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.2+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -472,8 +661,13 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.3+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -483,8 +677,13 @@ const Listado = () => {
                                         <td>Win 88+ / OSX.3+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -494,8 +693,13 @@ const Listado = () => {
                                         <td>Win 88+ / OSX.3+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -505,8 +709,13 @@ const Listado = () => {
                                         <td>Wii</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -516,8 +725,13 @@ const Listado = () => {
                                         <td>N800</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -527,8 +741,13 @@ const Listado = () => {
                                         <td>Nintendo DS</td>
                                         <td>8.5</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -538,8 +757,13 @@ const Listado = () => {
                                         <td>KDE 3.1</td>
                                         <td>3.1</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -549,8 +773,13 @@ const Listado = () => {
                                         <td>KDE 3.3</td>
                                         <td>3.3</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -560,8 +789,13 @@ const Listado = () => {
                                         <td>KDE 3.5</td>
                                         <td>3.5</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -571,8 +805,13 @@ const Listado = () => {
                                         <td>Mac OS 8-9</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -582,8 +821,13 @@ const Listado = () => {
                                         <td>Mac OS 7.6-9</td>
                                         <td>1</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -593,8 +837,13 @@ const Listado = () => {
                                         <td>Mac OS 8-X</td>
                                         <td>1</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -604,8 +853,13 @@ const Listado = () => {
                                         <td>Embedded devices</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -615,8 +869,13 @@ const Listado = () => {
                                         <td>Embedded devices</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -626,8 +885,13 @@ const Listado = () => {
                                         <td>Embedded devices</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -637,8 +901,13 @@ const Listado = () => {
                                         <td>Text only</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -648,8 +917,13 @@ const Listado = () => {
                                         <td>Text only</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -659,8 +933,13 @@ const Listado = () => {
                                         <td>Windows Mobile 6</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -670,8 +949,13 @@ const Listado = () => {
                                         <td>PSP</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -681,8 +965,13 @@ const Listado = () => {
                                         <td>-</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
@@ -694,8 +983,13 @@ const Listado = () => {
                                         <th>Platform(s)</th>
                                         <th>Engine version</th>
                                         <td>
-                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
+                                            <ButtonLaunchModal 
+                                            class="btn btn-block btn-outline-primary btn-xs" 
+                                            modalId="gestion" 
+                                            classIcon="fas fa-edit"
+                                            name="Gestionar"
+                                            >
+                                                <ModalAddNew />
                                             </ButtonLaunchModal>
                                         </td>
                                     </tr>
