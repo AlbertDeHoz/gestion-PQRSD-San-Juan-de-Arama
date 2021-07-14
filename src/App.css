@@ -54,7 +54,7 @@
 }
 
 .active-option{
-  background: #FF9425;
+  background: #FF9425 !important;
   color:#fff !important;
 }
 .active-item{
@@ -95,4 +95,14 @@
 }
 .btn-institucional:active{
   background-color: #fca242;
+}
+
+.btn-orange-institucional{
+  background: #418FDE;
+}
+.btn-orange-institucional:hover{
+  background: #70a6dd;
+}
+.btn-orange-institucional:active{
+  background: #70a6dd;
 }
