@@ -1,5 +1,4 @@
 const ButtonLaunchModal = (props) => {
-  const str="nueva-pqrsd"
   return (
     <div>
       {/* <!-- Button trigger modal --> */}
