@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { useLocation } from 'react-router-dom';
 import ButtonLaunchModal from '../components/ButtonLaunchModal';
-import ButtonLaunchModalGestionar from '../components/ButtonLaunchModalGestionar';
 import ModalAddNew from '../components/ModalAddNew';
 import ModalGestionar from '../components/ModalGestionar';
 
@@ -60,9 +59,9 @@ const Listado = () => {
                                         <td>Win 95+</td>
                                         <td> 4</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
-                                                <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
+                                                <ModalAddNew />
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -73,9 +72,9 @@ const Listado = () => {
                                         <td>Win 95+</td>
                                         <td>5</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -86,9 +85,9 @@ const Listado = () => {
                                         <td>Win 95+</td>
                                         <td>5.5</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -99,9 +98,9 @@ const Listado = () => {
                                         <td>Win 98+</td>
                                         <td>6</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -110,9 +109,9 @@ const Listado = () => {
                                         <td>Win XP SP2+</td>
                                         <td>7</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -121,9 +120,9 @@ const Listado = () => {
                                         <td>Win XP</td>
                                         <td>6</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -132,9 +131,9 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.7</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -143,9 +142,9 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -154,9 +153,9 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -165,9 +164,9 @@ const Listado = () => {
                                         <td>Win 2k+ / OSX.3+</td>
                                         <td>1.9</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -176,9 +175,9 @@ const Listado = () => {
                                         <td>OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -187,9 +186,9 @@ const Listado = () => {
                                         <td>OSX.3+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -198,9 +197,9 @@ const Listado = () => {
                                         <td>Win 95+ / Mac OS 8.6-9.2</td>
                                         <td>1.7</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -209,9 +208,9 @@ const Listado = () => {
                                         <td>Win 98SE+</td>
                                         <td>1.7</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -220,9 +219,9 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -231,9 +230,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -242,9 +241,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.1</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -253,9 +252,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.2</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -264,9 +263,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.3</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -275,9 +274,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.4</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -286,9 +285,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.5</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -297,9 +296,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>1.6</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -308,9 +307,9 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.1+</td>
                                         <td>1.7</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -319,9 +318,9 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.1+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -330,9 +329,9 @@ const Listado = () => {
                                         <td>Win 98+ / OSX.2+</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -341,9 +340,9 @@ const Listado = () => {
                                         <td>Gnome</td>
                                         <td>1.8</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -352,9 +351,9 @@ const Listado = () => {
                                         <td>OSX.3</td>
                                         <td>125.5</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -363,9 +362,9 @@ const Listado = () => {
                                         <td>OSX.3</td>
                                         <td>312.8</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -374,9 +373,9 @@ const Listado = () => {
                                         <td>OSX.4+</td>
                                         <td>419.3</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -385,9 +384,9 @@ const Listado = () => {
                                         <td>OSX.4+</td>
                                         <td>522.1</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -396,9 +395,9 @@ const Listado = () => {
                                         <td>OSX.4+</td>
                                         <td>420</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -407,9 +406,9 @@ const Listado = () => {
                                         <td>iPod</td>
                                         <td>420.1</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -418,9 +417,9 @@ const Listado = () => {
                                         <td>S60</td>
                                         <td>413</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -429,9 +428,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.1+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -440,9 +439,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.2+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -451,9 +450,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.2+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -462,9 +461,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.2+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -473,9 +472,9 @@ const Listado = () => {
                                         <td>Win 95+ / OSX.3+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -484,9 +483,9 @@ const Listado = () => {
                                         <td>Win 88+ / OSX.3+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -495,9 +494,9 @@ const Listado = () => {
                                         <td>Win 88+ / OSX.3+</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -506,9 +505,9 @@ const Listado = () => {
                                         <td>Wii</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -517,9 +516,9 @@ const Listado = () => {
                                         <td>N800</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -528,9 +527,9 @@ const Listado = () => {
                                         <td>Nintendo DS</td>
                                         <td>8.5</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -539,9 +538,9 @@ const Listado = () => {
                                         <td>KDE 3.1</td>
                                         <td>3.1</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -550,9 +549,9 @@ const Listado = () => {
                                         <td>KDE 3.3</td>
                                         <td>3.3</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -561,9 +560,9 @@ const Listado = () => {
                                         <td>KDE 3.5</td>
                                         <td>3.5</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -572,9 +571,9 @@ const Listado = () => {
                                         <td>Mac OS 8-9</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -583,9 +582,9 @@ const Listado = () => {
                                         <td>Mac OS 7.6-9</td>
                                         <td>1</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -594,9 +593,9 @@ const Listado = () => {
                                         <td>Mac OS 8-X</td>
                                         <td>1</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -605,9 +604,9 @@ const Listado = () => {
                                         <td>Embedded devices</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -616,9 +615,9 @@ const Listado = () => {
                                         <td>Embedded devices</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -627,9 +626,9 @@ const Listado = () => {
                                         <td>Embedded devices</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -638,9 +637,9 @@ const Listado = () => {
                                         <td>Text only</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -649,9 +648,9 @@ const Listado = () => {
                                         <td>Text only</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -660,9 +659,9 @@ const Listado = () => {
                                         <td>Windows Mobile 6</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -671,9 +670,9 @@ const Listado = () => {
                                         <td>PSP</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     <tr>
@@ -682,9 +681,9 @@ const Listado = () => {
                                         <td>-</td>
                                         <td>-</td>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -695,9 +694,9 @@ const Listado = () => {
                                         <th>Platform(s)</th>
                                         <th>Engine version</th>
                                         <td>
-                                            <ButtonLaunchModalGestionar class="btn btn-block btn-outline-primary btn-xs">
+                                            <ButtonLaunchModal class="btn btn-block btn-outline-primary btn-xs">
                                                 <ModalGestionar />
-                                            </ButtonLaunchModalGestionar>
+                                            </ButtonLaunchModal>
                                         </td>
                                     </tr>
                                     </tfoot>
