@@ -4,14 +4,26 @@ import ButtonLaunchModal from "../components/ButtonLaunchModal";
 import ModalAddNew from "../components/ModalAddNew";
 import ModalGestionar from "../components/ModalGestionar";
 import DataGrid from "../components/DataGrid";
-
-/**
- * La intención de este sample.json es simular la petición
- */
-import { feeds } from "../sample.json";
+import dat from "../sample2"
 
 const Listado = () => {
   const url = useLocation();
+  const requests = dat;
+  const columns = [
+    {
+      Header: "Name",
+      accessor: "name",
+    },
+    {
+      Header: "Email",
+      accessor: "email",
+    },
+    {
+      Header: "Phone",
+      accessor: "phone",
+    },
+  ];
+
   return (
     <div>
       <div className="content-wrapper pt-4">
@@ -59,18 +71,18 @@ const Listado = () => {
                   </div>
                   {/* /.card-header */}
                   <div className="card-body">
-                    <DataGrid 
-                    headers={headers}
-                    data={feeds}
+                    <DataGrid
+                      data ={requests}
+                      columns={columns}
                     >
-                        <ButtonLaunchModal
+                      <ButtonLaunchModal
                         class="btn btn-block btn-outline-primary btn-xs" 
                         modalId="gestion" 
                         classIcon="fas fa-edit"
                         name="Gestionar"
                         >
-                        <ModalGestionar />
-                        </ButtonLaunchModal>    
+                          <ModalGestionar />
+                        </ButtonLaunchModal>   
                     </DataGrid>
                   </div>
                   {/* /.card-body */}
@@ -87,11 +99,8 @@ const Listado = () => {
   );
 };
 
-const headers = [
-    {id:1, header:'Title', name:"title"},
-    {id:2, header:'Name', name:"name"},
-    {id:3, header:'Location', name:"location"},
-    {id:4, header:'Description',name:"description"}
-]
+//*****************Read********/
 
 export default Listado;
+
+
