@@ -58,7 +58,7 @@
   color:#fff !important;
 }
 .active-item{
-  background: #fff;
+  background: #fff !important;
   color: #22326E !important;
 }
 
@@ -67,8 +67,8 @@
   color: #22326E !important;
 }
 .bg-active-item:active{
-  background: #fff;
-  color: #22326E;
+  background: #fff !important;
+  color: #22326E !important;
 }
 .bg-active-item:focus{
   background: #fff !important;
