@@ -1,0 +1,108 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Estilos personalizados */
+
+.bg-active-option{
+  background: none;
+}
+.bg-active-option:hover{
+  background: #FF9425 !important;
+}
+.bg-active-option:active{
+  background: #FF9425 !important;
+}
+.bg-active-option:focus{
+  background: #FF9425 !important;
+}
+
+.active-option{
+  background: #FF9425 !important;
+  color:#fff !important;
+}
+.active-item{
+  background: #fff !important;
+  color: #22326E !important;
+}
+
+.bg-active-item:hover{
+  background: #fff !important;
+  color: #22326E !important;
+}
+.bg-active-item:active{
+  background: #fff !important;
+  color: #22326E !important;
+}
+.bg-active-item:focus{
+  background: #fff !important;
+  color: #22326E !important;
+}
+
+.bg-institucional{
+  background-color: #22326E !important;
+}
+
+.text-blue-institucional{
+  color: #22326E !important;
+}
+.text-orange-institucional{
+  color: #FF9425 !important;
+}
+
+.btn-institucional{
+  background-color: #22326E !important;
+  color: #fff;
+}
+.btn-institucional:hover{
+  background-color: #FF9425 !important;
+}
+.btn-institucional:active{
+  background-color: #fca242 !important;
+}
+
+.btn-orange-institucional{
+  background: #418FDE !important;
+}
+.btn-orange-institucional:hover{
+  background: #70a6dd !important;
+}
+.btn-orange-institucional:active{
+  background: #70a6dd !important;
+}
