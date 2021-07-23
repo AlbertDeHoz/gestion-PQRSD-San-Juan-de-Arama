@@ -80,6 +80,17 @@ let pqrsdSchema = new Schema(
         aux_responsable:{
             type: Number,
             require: false,
+        },
+        doc_respuesta:{
+            type: String,
+        },
+        status:{
+            type: String,
+            require: false,
+        },
+        usuario:{
+            type: Schema.Types.ObjecId,
+            ref: 'User',
         }
     },
     {

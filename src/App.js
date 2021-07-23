@@ -14,6 +14,7 @@ import AdminTiemposRespuesta from './pages/Admin/AdminTiemposRespuesta';
 import AdminTramites from './pages/Admin/AdminTramites';
 import AdminEstadosPQRSD from './pages/Admin/AdminEstadosPQRSD';
 import AdminUsuarios from './pages/Admin/AdminUsuarios';
+import Login from './pages/login';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/admin-empresas-transporte"><AdminEmpresasTransportadoras/></Route>
             <Route path="/admin-estados-pqrsd"><AdminEstadosPQRSD/></Route>
             <Route path="/admin-tramites"><AdminTramites/></Route>
+            <Route path="/login"><Login/></Route>
           </Switch>
         <Footer/>
     </div>

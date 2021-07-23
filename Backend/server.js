@@ -1,16 +1,24 @@
 const express = require('express');
 const morgan = require('morgan');
-const routes = require('./routes/index');
 
-const PORT = 5000;
+//middlewares
+require('./database/db');
+
+//Recibir acceder a los registros
+let cors = require('cors');
 const app = express();
 require('dotenv').config();
 
+app.use(cors())
 app.use(morgan('dev'));
 app.use(express.json());
 app.use( express.urlencoded( {extended:true} ) );
-app.use('/',routes);
 
-require('./database/db')
+//rutas del servidor
+const rutaUsuario = require('./routes/user')
+app.use('/api/user',rutaUsuario);
 
-app.listen(PORT,() => {console.log(`server up at Port ${PORT}`)})
+
+app.set('port', 5000);
+
+app.listen(app.get('port'),() => {console.log(`server up at Port: ${app.get('port')}`)});

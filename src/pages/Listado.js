@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import { useLocation } from "react-router-dom";
 import ButtonLaunchModal from "../components/ButtonLaunchModal";
 import ModalAddNew from "../components/ModalAddNew";
