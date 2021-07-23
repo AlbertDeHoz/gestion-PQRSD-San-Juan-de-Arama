@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import logoMenu from '../img/LogoSJ.png'
+import fotoUser from '../img/user2-160x160.jpg'
+import '../App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,9 +18,9 @@ const Menu = () => {
           <div>
   <aside className="main-sidebar bg-institucional elevation-4">
     {/* Brand Logo */}
-      <Link to="/Dashboard" className="brand-link">
+      <Link to="/Pqrsd" className="brand-link">
         <div className="d-flex">
-          <img src="dist/img/Logosj.png" alt="Recuperemos San Juan" className="img-circle elevation-2" width="60"/>
+          <img src={logoMenu} alt="Recuperemos San Juan" className="img-circle elevation-2" width="60"/>
           <div className="ml-3">
             <span className="text-md text-white font-weight-bold mt-3">Gestión de PQRSD <br/>San Juan de Arama</span>
           </div>
@@ -28,7 +31,7 @@ const Menu = () => {
         {/* Sidebar user panel */}
         <div className="user-panel mt-3 pb-3 mb-3 d-flex">
           <div className="image">
-            <img src="dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
+            <img src={fotoUser} className="img-circle elevation-2" alt="User Image" />
           </div>
           <div className="info">
             <a href="#" className="d-block text-white">User Name</a>
@@ -40,82 +43,82 @@ const Menu = () => {
             {/* Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library */}
             <li className="nav-item">
-              <Link to="/Dashboard" className={`nav-link  text-white bg-active-option ${url.pathname == '/Dashboard' || url.pathname=='/' ? "active-option":""}`}>
+              <Link to="/Pqrsd/Dashboard" className={`nav-link  text-white bg-active-option ${url.pathname == '/Pqrsd/Dashboard' || url.pathname=='/' ? "active-option":""}`}>
                 <i className="nav-icon fas fa-tachometer-alt" />
                 <p>Dashboard</p>
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Listado" className={`nav-link text-white bg-active-option ${url.pathname == '/Listado' ? "active-option":""}`}>
+              <Link to="/Pqrsd/Listado" className={`nav-link text-white bg-active-option ${url.pathname == '/Pqrsd/Listado' ? "active-option":""}`}>
               <i className="nav-icon fas fa-table" />
                 <p>Listado de PQRSDs</p>
               </Link>
             </li>
-            <li className="nav-item has-treeview">
-              <div className="nav-link bg-active-option" style={{cursor: 'pointer'}}>
+            <li className="nav-item">
+              <a className="nav-link bg-active-option">
                 <i className="nav-icon fas fa-copy text-light" />
                 <p className="text-light">
                   Administración
                   <i className="fas fa-angle-left right text-light" />
                   {/* <span className="badge badge-info right">6</span> */}
                 </p>
-              </div>
+              </a>
               <ul className="nav nav-treeview">
-              <li className="nav-item">
-                  <Link to="/admin-usuarios" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-usuarios' ? "active-item":""}`}>
-                    <i className="far fa-check-circle nav-icon" />
-                    <p>Gestión de Usuarios</p>
-                  </Link>
-                </li>
                 <li className="nav-item">
-                  <Link to="/admin-tipos-PQRSD" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tipos-PQRSD' ? "active-item":""}`}>
-                    <i className="far fa-check-circle nav-icon" />
-                    <p>Tipos de PQRSD</p>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/admin-mecanismos-recepcion" className={`nav-link text-white bg-active-item d-flex align-items-center ${url.pathname == '/admin-mecanismos-recepcion' ? "active-item":""}`}>
-                    <i className="far fa-check-circle nav-icon" />
-                    <div><p>Mecanismos de recepción</p></div>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/admin-dependencias" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-dependencias' ? "active-item":""}`}>
-                    <i className="far fa-check-circle nav-icon" />
-                    <p>Dependencias</p>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/admin-tipos-notificacion" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tipos-notificacion' ? "active-item":""}`}>
-                    <i className="far fa-check-circle nav-icon" />
-                    <p>Tipos de notificacion</p>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/admin-tiempos-respuesta" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tiempos-respuesta' ? "active-item":""}`}>
-                    <i className="far fa-check-circle nav-icon" />
-                    <p>Tiempos de respuesta</p>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/admin-empresas-transporte" className={`nav-link text-white bg-active-item d-flex align-items-center ${url.pathname == '/admin-empresas-transporte' ? "active-item":""}`}>
-                    <i className="far fa-check-circle nav-icon" />
-                    <div><p>Empresas transportadoras</p></div>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/admin-tramites" className={`nav-link text-white bg-active-item ${url.pathname == '/admin-tramites' ? "active-item":""}`}>
-                    <i className="far fa-check-circle nav-icon" />
-                    <p>Trámites</p>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/admin-estados-pqrsd" className={`nav-link text-white bg-active-item d-flex align-items-center ${url.pathname == '/admin-tramites' ? "active-item":""}`}>
-                    <i className="far fa-check-circle nav-icon" />
-                    <div><p>Estados de PQRSD</p></div>
-                  </Link>
-                </li>
-                <br/><br/>
+                    <Link to="/Pqrsd/admin-usuarios" className={`nav-link text-white bg-active-item ${url.pathname == '/Pqrsd/admin-usuarios' ? "active-item":""}`}>
+                      <i className="far fa-check-circle nav-icon" />
+                      <p>Gestión de Usuarios</p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Pqrsd/admin-tipos-PQRSD" className={`nav-link text-white bg-active-item ${url.pathname == '/Pqrsd/admin-tipos-PQRSD' ? "active-item":""}`}>
+                      <i className="far fa-check-circle nav-icon" />
+                      <p>Tipos de PQRSD</p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Pqrsd/admin-mecanismos-recepcion" className={`nav-link text-white bg-active-item d-flex align-items-center ${url.pathname == '/Pqrsd/admin-mecanismos-recepcion' ? "active-item":""}`}>
+                      <i className="far fa-check-circle nav-icon" />
+                      <div><p>Mecanismos de recepción</p></div>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Pqrsd/admin-dependencias" className={`nav-link text-white bg-active-item ${url.pathname == '/Pqrsd/admin-dependencias' ? "active-item":""}`}>
+                      <i className="far fa-check-circle nav-icon" />
+                      <p>Dependencias</p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Pqrsd/admin-tipos-notificacion" className={`nav-link text-white bg-active-item ${url.pathname == '/Pqrsd/admin-tipos-notificacion' ? "active-item":""}`}>
+                      <i className="far fa-check-circle nav-icon" />
+                      <p>Tipos de notificacion</p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Pqrsd/admin-tiempos-respuesta" className={`nav-link text-white bg-active-item ${url.pathname == '/Pqrsd/admin-tiempos-respuesta' ? "active-item":""}`}>
+                      <i className="far fa-check-circle nav-icon" />
+                      <p>Tiempos de respuesta</p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Pqrsd/admin-empresas-transporte" className={`nav-link text-white bg-active-item d-flex align-items-center ${url.pathname == '/Pqrsd/admin-empresas-transporte' ? "active-item":""}`}>
+                      <i className="far fa-check-circle nav-icon" />
+                      <div><p>Empresas transportadoras</p></div>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Pqrsd/admin-tramites" className={`nav-link text-white bg-active-item ${url.pathname == '/Pqrsd/admin-tramites' ? "active-item":""}`}>
+                      <i className="far fa-check-circle nav-icon" />
+                      <p>Trámites</p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Pqrsd/admin-estados-pqrsd" className={`nav-link text-white bg-active-item d-flex align-items-center ${url.pathname == '/Pqrsd/admin-tramites' ? "active-item":""}`}>
+                      <i className="far fa-check-circle nav-icon" />
+                      <div><p>Estados de PQRSD</p></div>
+                    </Link>
+                  </li>
+                  <br/><br/>
               </ul>
             </li>
           </ul>

@@ -13,6 +13,7 @@ router.get('/',UserController.list);
 router.post('/login', UserController.login)
 router.post('/register', UserController.register);
 router.put('/update/:_id',verificarToken, UserController.update);
-router.delete('/delete/:_id')
+router.delete('/delete/:_id');
+router.post('/upload', verificarToken, UserController.upload);
 
 module.exports = router;

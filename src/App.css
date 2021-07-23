@@ -87,22 +87,22 @@
 }
 
 .btn-institucional{
-  background-color: #22326E;
+  background-color: #22326E !important;
   color: #fff;
 }
 .btn-institucional:hover{
-  background-color: #FF9425;
+  background-color: #FF9425 !important;
 }
 .btn-institucional:active{
-  background-color: #fca242;
+  background-color: #fca242 !important;
 }
 
 .btn-orange-institucional{
-  background: #418FDE;
+  background: #418FDE !important;
 }
 .btn-orange-institucional:hover{
-  background: #70a6dd;
+  background: #70a6dd !important;
 }
 .btn-orange-institucional:active{
-  background: #70a6dd;
+  background: #70a6dd !important;
 }

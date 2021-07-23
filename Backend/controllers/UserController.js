@@ -6,8 +6,30 @@ const bcrypt =require('bcryptjs');
 const jwt = require('jsonwebtoken');
 //config secret Key
 const config = require('../config')
+//librerias para actualizar imagen
+const multer = require('multer');
+const path = require('path')
 
+const storage = multer.diskStorage({
+    destination: './public/uploads/',
+    filename: function(req,file,cb){
+        cb(null, "IMAGE-"+Date.now()+path.extname(file.originalname))
+    }
+});
 
+const uploadimg = multer({
+    storage: storage,
+    limis:{fileSize: 1000000},
+    fileFilter: (req, file, cb) =>{
+        const filetypes = /jpeg|jpg|png|gif/;
+        const mimetype = filetypes.test(file.mimetype);
+        const extname = filetypes.test(path.extname(file.originalname));
+        if(mimetype && extname){
+            return cb(null, true)
+        }
+        cb("Archivo no valido")
+    }
+}).single("myImage");
 module.exports = {
 
     //Controlando la ruta list
@@ -86,5 +108,19 @@ module.exports = {
     },
     delete: async (req,res) =>{
         
+    },
+    upload: async (req, res) =>{
+        const url = `${req.protocol}://${req.get('host')}`;
+        const _id = req.user._id;
+        uploadimg(req,res,async function(err){
+            if(err){
+                return res.end("Error al subir la imagen")
+            }
+            const rutaimage = `${url}/uploads/${req.file.filename}`;
+            await User.findByIdAndUpdate(_id, {
+                avatar: rutaimage,
+            });
+            res.json({imagen: rutaimage})
+        });
     }
 }
