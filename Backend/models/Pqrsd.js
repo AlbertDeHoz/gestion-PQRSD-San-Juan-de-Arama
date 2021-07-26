@@ -35,7 +35,7 @@ let pqrsdSchema = new Schema(
             type: String,
         },
         descripcion:{
-            type: Text
+            type: String
         },
         mec_recepcion:{
             type: String,
@@ -74,7 +74,7 @@ let pqrsdSchema = new Schema(
             require: false,
         },
         observaciones:{
-            type: Text,
+            type: String,
             require: false,
         },
         aux_responsable:{
@@ -88,14 +88,16 @@ let pqrsdSchema = new Schema(
             type: String,
             require: false,
         },
-        usuario:{
-            type: Schema.Types.ObjecId,
-            ref: 'User',
-        }
+
+        // usuario:{
+        //     type: Schema.Types.ObjecId,
+        //     ref: 'User',
+        // }
     },
     {
-        collection: "pqrsds",
+        versionKey: false
     }
+
 );
 
 module.exports = mongoose.model("Pqrsd", pqrsdSchema);

@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const pqrsController = require('../controllers/pqrsController');
+const pqrsdController = require('../controllers/pqrsController');
 
-router.get('/',pqrsController.list);
-router.post('/create',pqrsController.create);
-router.put('/update/:id',pqrsController.update);
+router.get('/',pqrsdController.list);
+router.post('/create',pqrsdController.create);
+router.put('/update/:id',pqrsdController.update);
 
 module.exports = router

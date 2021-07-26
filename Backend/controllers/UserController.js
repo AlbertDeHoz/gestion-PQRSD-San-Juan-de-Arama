@@ -1,4 +1,4 @@
-const { registroValidacion, loginValidacion, actualizarValidacion } = require("../validate")
+const { registroValidacion, loginValidacion, actualizarValidacion } = require("../validate/user.validate")
 const User = require('../models/User')
 // encriptador de claves
 const bcrypt =require('bcryptjs');

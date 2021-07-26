@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const routes = require('./routes')
 //middlewares
 require('./database/db');
 
@@ -16,8 +17,7 @@ app.use(express.json());
 app.use( express.urlencoded( {extended:true} ) );
 
 //rutas del servidor
-const rutaUsuario = require('./routes/user')
-app.use('/api/user',rutaUsuario);
+app.use('/api',routes);
 
 
 app.set('port', 5000);
