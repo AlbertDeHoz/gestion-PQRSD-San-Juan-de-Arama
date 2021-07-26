@@ -69,7 +69,7 @@ const FormNewPQRSD = () => {
               </div>
               <div>
                   <label className="form-label">Adjuntar documento de Solicitud</label>
-                  <input type="file" className="form-control" placeholder="no hay archivo seleccionado" />
+                  <input type="file" className="form-control" placeholder="no hay archivo seleccionado" name="file"/>
               </div>
           </div>
         </div>

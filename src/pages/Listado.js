@@ -45,6 +45,10 @@ export default class Listado extends React.Component {
     const data = await response.json();
     this.setState({pqrsdsData:data});
   }
+  async createPqrsd(){
+    const response = await fetch(`${window.$url_api}/api/pqrsd/create`);
+
+  }
   render() {
     const url = window.location.pathname
     return (
