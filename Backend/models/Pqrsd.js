@@ -35,7 +35,7 @@ let pqrsdSchema = new Schema(
             type: String,
         },
         descripcion:{
-            type: Text
+            type: String
         },
         mec_recepcion:{
             type: String,
@@ -51,51 +51,44 @@ let pqrsdSchema = new Schema(
         },
         n_of_respuesta:{
             type: String,
-            require: false,
         },
         f_respuesta:{
             type: String,
-            require: false,
         },
         tip_notificacion:{
             type: String,
-            require: false,
         },
         emp_transporte:{
             type: String,
-            require: false,
         },
         num_guia:{
             type: Number,
-            require: false,
         },
         op_respuesta:{
             type: String,
-            require: false,
         },
         observaciones:{
-            type: Text,
-            require: false,
+            type: String,
         },
         aux_responsable:{
             type: Number,
-            require: false,
         },
         doc_respuesta:{
             type: String,
         },
         status:{
             type: String,
-            require: false,
         },
-        usuario:{
-            type: Schema.Types.ObjecId,
-            ref: 'User',
-        }
+
+        // usuario:{
+        //     type: Schema.Types.ObjecId,
+        //     ref: 'User',
+        // }
     },
     {
-        collection: "pqrsds",
+        collection: "pqrsd",
     }
+
 );
 
 module.exports = mongoose.model("Pqrsd", pqrsdSchema);

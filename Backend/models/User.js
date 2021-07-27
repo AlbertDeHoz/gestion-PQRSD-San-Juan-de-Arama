@@ -40,7 +40,7 @@ let userSchema = new Schema(
     }]
   },
   {
-    collection: "students",
+    collection: "users",
   }
  );
 module.exports = mongoose.model("User", userSchema);

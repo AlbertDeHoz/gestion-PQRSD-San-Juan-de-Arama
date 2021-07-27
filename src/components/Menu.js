@@ -3,14 +3,9 @@ import logoMenu from '../img/LogoSJ.png'
 import fotoUser from '../img/user2-160x160.jpg'
 import '../App.css';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  useRouteMatch,
   useLocation
 } from "react-router-dom";
-import Dashboard from '../pages/Dashboard';
 
 const Menu = () => {
       const url = useLocation();
@@ -55,14 +50,14 @@ const Menu = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link bg-active-option">
+              <Link to="#" className="nav-link bg-active-option">
                 <i className="nav-icon fas fa-copy text-light" />
                 <p className="text-light">
                   Administración
                   <i className="fas fa-angle-left right text-light" />
                   {/* <span className="badge badge-info right">6</span> */}
                 </p>
-              </a>
+              </Link>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
                     <Link to="/Pqrsd/admin-usuarios" className={`nav-link text-white bg-active-item ${url.pathname == '/Pqrsd/admin-usuarios' ? "active-item":""}`}>

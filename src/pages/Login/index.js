@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import logoMenu from '../../img/LogoSJ.png'
 
 export default class index extends Component {
     constructor(){
@@ -45,7 +46,7 @@ export default class index extends Component {
                 <main className="form-signin">
                     <form onSubmit={this.submitFormulario}>
                     <div className="text-center">
-                    <img className="img-circle elevation-1 center" src="dist/img/Logosj.png" width="150" />
+                    <img className="img-circle elevation-1 center" src={logoMenu} width="150" alt="Logo Alcaldía San Juan de Arama" />
                     <h4 className="h3 mb-3 mt-5 fw-normal">Por favor inicie sesion</h4>
                     {
                             this.state.mensaje !== ''?(

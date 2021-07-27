@@ -16,11 +16,7 @@ const ModalAddNew = () => {
             ></button>
           </div>
           <div className="modal-body">
-            <FormNewPQRSD data={FormNewPQRSD.data}/>
-          </div>
-          <div className="modal-footer">
-              <button type="button" className="btn btn-orange-institucional text-white btn-xs" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" className="btn btn-institucional text-white btn-xs">Guardar PQRSD</button>
+            <FormNewPQRSD data={FormNewPQRSD.postData}/>
           </div>
         </div>
       </div>
