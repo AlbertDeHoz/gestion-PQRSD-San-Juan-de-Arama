@@ -29,7 +29,8 @@ const uploadimg = multer({
         }
         cb("Archivo no valido")
     }
-}).single("myImage");
+}).single("imgPerfil");
+
 module.exports = {
 
     //Controlando la ruta list
@@ -120,7 +121,11 @@ module.exports = {
             await User.findByIdAndUpdate(_id, {
                 avatar: rutaimage,
             });
-            res.json({imagen: rutaimage})
+            res.json({mensaje: "Foto Actualizada con éxito"})
         });
+    },
+    userInfo: async (req,res)=>{
+        const user = await User.findById(req.user._id);
+        res.send(user);
     }
 }

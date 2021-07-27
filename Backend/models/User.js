@@ -20,6 +20,7 @@ let userSchema = new Schema(
     },
     avatar:{
         type: String,
+        default: 'http://localhost:5000/uploads/userDef.png'
     },
     password:{
       type: String,

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 export default class index extends Component {
     constructor(){
@@ -62,6 +63,12 @@ export default class index extends Component {
                                 <label htmlFor="floatingPassword">Contraseña</label>
                             </div>
                             <input type="submit" value="Registrar Usuario" className="btn bg-institucional text-white btn-xs w-100 p-2 mt-3" />
+                            
+                            <div className="text-center">
+                                <Link className="text-orange-institucional btn btn-light btn-xs w-100 p-2 mt-3" data-toggle="tooltip" data-placement="top" title="Registrate ahora" to="/">
+                                    Login
+                                </Link>
+                            </div>
                         </form>
                     </div>
                 </div>

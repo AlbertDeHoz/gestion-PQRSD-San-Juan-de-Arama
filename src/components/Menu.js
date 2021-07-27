@@ -6,10 +6,40 @@ import {
   Link,
   useLocation
 } from "react-router-dom";
+import axios from 'axios';
 
-const Menu = () => {
-      const url = useLocation();
-        return (
+export default class UserInfo extends Component {
+
+  constructor(){
+      super();
+      this.state = {
+          user: {},
+          name: '',
+          file: null,
+          email: '',
+          mensaje: ''
+      };
+  }
+
+  componentDidMount(){
+      this.getInfo()
+  }
+
+  getInfo(){
+      const token = localStorage.getItem('auth-token');
+      axios.get('http://localhost:5000/api/user/userinfo',{
+          headers: {'auth-token': token}
+      }).then(response => {
+          this.setState({user: response.data})
+          console.log(response.data)
+      }).catch(err =>{
+          this.setState({ mensaje: err.response.data})
+      });
+  }
+  
+  render() {
+    const url = window.location.pathname
+      return (
           <div>
   <aside className="main-sidebar bg-institucional elevation-4">
     {/* Brand Logo */}
@@ -24,14 +54,16 @@ const Menu = () => {
       {/* Sidebar */}
       <div className="sidebar">
         {/* Sidebar user panel */}
-        <div className="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div className="image">
-            <img src={fotoUser} className="img-circle elevation-2" alt="User Image" />
+        <Link to="/Pqrsd/userinfo" >
+          <div className="user-panel mt-3 d-flex align-items-start">
+            <div className="image">
+            <div className="rounded-circle d-block" style={{backgroundImage:`url(${this.state.user.avatar})`, height: '40px', width: '40px', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPositionY: 'center', backgroundPositionX: 'center',  border: '2px solid #FF9425'}}></div>
+            </div>
+            <div className="info mt-1">
+              <p className="text-white">{this.state.user.name}</p>
+            </div>
           </div>
-          <div className="info">
-            <a href="#" className="d-block text-white">User Name</a>
-          </div>
-        </div>
+        </Link>
         {/* Sidebar Menu */}
         <nav className="mt-2">
           <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -126,4 +158,4 @@ const Menu = () => {
 
         )
     }
-export default Menu;
+  }

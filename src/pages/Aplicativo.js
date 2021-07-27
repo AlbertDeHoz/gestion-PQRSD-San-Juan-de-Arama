@@ -14,6 +14,7 @@ import AdminTramites from './Admin/AdminTramites';
 import AdminEstadosPQRSD from './Admin/AdminEstadosPQRSD';
 import AdminUsuarios from './Admin/AdminUsuarios';
 import Welcome from '../components/Welcome';
+import UserInfo from '../components/UserInfo'
 import '../App.css';
 
 function Aplicativo() {
@@ -23,6 +24,7 @@ function Aplicativo() {
           <Menu/>
             <Switch>
                 <Route exact path="/Pqrsd"><Welcome/></Route>
+                <Route exact path="/Pqrsd/userinfo"><UserInfo/></Route>
                 <Route path="/Pqrsd/Dashboard"><Dashboard/></Route>
                 <Route path="/Pqrsd/Listado"><Listado/></Route>
                 <Route path="/Pqrsd/admin-dependencias"><AdminDependencias/></Route>

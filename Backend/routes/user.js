@@ -9,8 +9,9 @@ const verificarToken = require('../routes/verificarToken')
 router.get('/',UserController.list);
 router.post('/login', UserController.login)
 router.post('/register', UserController.register);
-router.put('/update/:_id',verificarToken, UserController.update);
+router.post('/update',verificarToken, UserController.update);
 router.delete('/delete/:_id');
 router.post('/upload', verificarToken, UserController.upload);
+router.get('/userinfo', verificarToken, UserController.userInfo);
 
 module.exports = router;

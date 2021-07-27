@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 export default class Header extends Component {
     render() {
@@ -24,6 +25,9 @@ export default class Header extends Component {
     </form>
     {/* Right navbar links */}
     <ul className="navbar-nav ml-auto">
+      <li className="nav-item">
+          <Link className="nav-link" to="/logout">Logout</Link>
+      </li>
       {/* Notifications Dropdown Menu */}
       <li className="nav-item dropdown">
         <a className="nav-link" data-toggle="dropdown" href="#">

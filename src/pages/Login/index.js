@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import axios from 'axios';
 import logoMenu from '../../img/LogoSJ.png'
 
@@ -67,7 +68,12 @@ export default class index extends Component {
                     <div className="text-center">
                         <input value="Iniciar Sesion" className="btn bg-institucional text-white btn-xs w-100 p-2 mt-3" type="submit" />
                     </div>
-                    <p className="mt-5 mb-3 text-muted">PQRSDS San Juan de Arama ©2021</p>
+                    <div className="text-center">
+                        <Link className="text-orange-institucional btn btn-light btn-xs w-100 p-2 mt-3" data-toggle="tooltip" data-placement="top" title="Registrate ahora" to="/registro">
+                            Registrarse
+                        </Link>
+                    </div>
+                    <p className="mt-5 mb-3 text-muted text-center">PQRSDS San Juan de Arama ©2021</p>
                     </form>
                 </main>
             </div>

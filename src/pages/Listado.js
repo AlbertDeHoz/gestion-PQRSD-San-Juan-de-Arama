@@ -110,7 +110,7 @@ export default class Listado extends React.Component {
                           classIcon="fas fa-edit"
                           name="Gestionar"
                         >
-                          <ModalGestionar />
+                          <ModalGestionar data={this.state.pqrsdsData} />
                         </ButtonLaunchModal>
                       </DataGrid>
                     </div>

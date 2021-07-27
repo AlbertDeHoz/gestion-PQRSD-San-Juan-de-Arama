@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
     render() {
         return (
-           <div>
+           <div >
   <footer className="main-footer text-blue-institucional">
     <strong className="text-blue-institucional">Copyright © 2021 <a className="text-orange-institucional" target="_blank" href="http://www.sanjuandearama-meta.gov.co">Alcaldía San Juan de Arama</a>. </strong>
     All rights reserved.
