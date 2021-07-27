@@ -51,42 +51,33 @@ let pqrsdSchema = new Schema(
         },
         n_of_respuesta:{
             type: String,
-            require: false,
         },
         f_respuesta:{
             type: String,
-            require: false,
         },
         tip_notificacion:{
             type: String,
-            require: false,
         },
         emp_transporte:{
             type: String,
-            require: false,
         },
         num_guia:{
             type: Number,
-            require: false,
         },
         op_respuesta:{
             type: String,
-            require: false,
         },
         observaciones:{
             type: String,
-            require: false,
         },
         aux_responsable:{
             type: Number,
-            require: false,
         },
         doc_respuesta:{
             type: String,
         },
         status:{
             type: String,
-            require: false,
         },
 
         // usuario:{
@@ -95,7 +86,7 @@ let pqrsdSchema = new Schema(
         // }
     },
     {
-        versionKey: false
+        collection: "pqrsd",
     }
 
 );

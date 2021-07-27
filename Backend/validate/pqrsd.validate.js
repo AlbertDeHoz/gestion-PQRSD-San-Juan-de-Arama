@@ -1,8 +1,8 @@
 const Joi = require('@hapi/joi');
 
 const createPqrsd = (data) => {
-    const joiSchema = Joi.object({
-        no_radicado: Joi.date().min(10).required(),
+    const schema = Joi.object({
+        no_radicado: Joi.string().min(10).required(),
         //f_recibido: no esta porque debe generarse automaticamente
         t_pqrsd: Joi.string().required(),
         //t_respuesta: debe generarse automaticamente
@@ -29,7 +29,7 @@ const createPqrsd = (data) => {
         status:Joi.string().optional()
 
     })
-    return joiSchema.validate(data);
+    return schema.validate(data);
 }
 
-module.exports = {createPqrsd}
+module.exports.createPqrsd = createPqrsd;

@@ -95,7 +95,7 @@ export default class Listado extends React.Component {
                       </div>
                     </div>
                     {/* /.card-header */}
-                    <div className="card-body">
+                    <div className="card-body" id="datagrid">
                       <DataGrid
                         data={this.state.pqrsdsData}
                         columns={this.state.columns}
