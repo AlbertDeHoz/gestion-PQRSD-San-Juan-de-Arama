@@ -6,7 +6,7 @@ const User = require('../models/User')
 //Verificar token
 const verificarToken = require('../routes/verificarToken')
 
-router.get('/',UserController.list);
+router.get('/',verificarToken, UserController.list);
 router.post('/login', UserController.login)
 router.post('/register', UserController.register);
 router.post('/update',verificarToken, UserController.update);

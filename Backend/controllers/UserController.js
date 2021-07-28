@@ -34,8 +34,14 @@ const uploadimg = multer({
 module.exports = {
 
     //Controlando la ruta list
-    list: async (req,res) =>{
-        //TODO
+    list: async (req,res, next) =>{
+        User.find((error, data) => {
+            if (error) {
+              return next(error)
+            } else {
+              res.json(data)
+            }
+          })
     },
 
     //Controlando la ruta login

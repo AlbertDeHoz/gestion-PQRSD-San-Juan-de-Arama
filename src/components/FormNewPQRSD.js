@@ -8,6 +8,7 @@ export default class FormNewPQRSD extends Component {
         let time = new Date();
         time.setDate(time.getDate() + 15);
         this.state = {
+            user: {},
             no_radicado: '2021260711am',
             f_recibido: date,
             t_pqrsd: '',
@@ -45,9 +46,25 @@ export default class FormNewPQRSD extends Component {
         console.log(this.state);
     }
 
+    componentDidMount(){
+        this.getInfo()
+    }
+
+    getInfo(){
+        const token = localStorage.getItem('auth-token');
+        axios.get('http://localhost:5000/api/user/userinfo',{
+            headers: {'auth-token': token}
+        }).then(response => {
+            this.setState({user: response.data})
+        }).catch(err =>{
+            this.setState({ mensaje: err.response.data})
+        });
+    }
+
     submitFormulario = async e => {
         e.preventDefault();
         let postData = {
+            _id: this.state.user._id,
             no_radicado: this.state.no_radicado,
             t_pqrsd: this.state.t_pqrsd,
             plazo_respuesta: this.state.plazo_respuesta,
@@ -67,9 +84,13 @@ export default class FormNewPQRSD extends Component {
             emp_transporte: this.state.emp_transporte,
             num_guia: this.state.num_guia
         }
-        
-        axios.post('http://localhost:5000/api/pqrsd/create', postData, {
+        const token = localStorage.getItem('auth-token')
+        var headers = {
+            'auth-token': token
+        }
 
+        axios.post(`http://localhost:5000/api/pqrsd/create/${this.state.user._id}`, postData, {
+        headers: headers
         }).then(response =>{
             this.setState({mensaje: response.data.mensaje});
         }).catch(err => {
@@ -160,7 +181,7 @@ export default class FormNewPQRSD extends Component {
           </div>
           <div className="modal-footer">
               <button type="button" className="btn btn-orange-institucional text-white btn-xs" data-bs-dismiss="modal">Cancelar</button>
-              <input type="submit" className="btn btn-institucional text-white btn-xs" data-bs-dismiss="modal" value="Guardar PQRSD"  />
+              <input type="submit" className="btn btn-institucional text-white btn-xs" value="Guardar PQRSD"  />
           </div>
       </form>
         </div>

@@ -16,7 +16,7 @@ const createPqrsd = (data) => {
         mec_recepcion: Joi.string().required(),
         tramites: Joi.string().required(),
         dependencia: Joi.string().required(),
-        doc_solicitud: Joi.string().optional(),
+        //doc_solicitud: Joi.string().optional(),
         n_of_respuesta: Joi.string().optional(),
         f_respuesta: Joi.string().optional(),
         tip_notificacion: Joi.string().optional(),

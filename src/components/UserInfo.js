@@ -28,7 +28,6 @@ export default class UserInfo extends Component {
             headers: {'auth-token': token}
         }).then(response => {
             this.setState({user: response.data})
-            console.log(response.data)
         }).catch(err =>{
             this.setState({ mensaje: err.response.data})
         });
@@ -82,6 +81,7 @@ export default class UserInfo extends Component {
     }
 
     render() {
+        let array = this.state.user.pqrsds
         return (
             <div>
                 <div className="content-wrapper">

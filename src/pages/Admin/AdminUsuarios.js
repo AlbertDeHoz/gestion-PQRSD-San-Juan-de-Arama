@@ -1,7 +1,42 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import Tbody from '../../components/Tboby';
 
 export default class AdminUsuarios extends Component {
+    constructor(){
+        super();
+        this.state = {
+            user: [],
+            name: '',
+            file: null,
+            email: '',
+            mensaje: ''
+        };
+    }
+
+    componentDidMount(){
+        this.getInfo()
+    }
+
+    getInfo(){
+        const token = localStorage.getItem('auth-token');
+        axios.get('http://localhost:5000/api/user',{
+            headers: {'auth-token': token}
+        }).then(response => {
+            this.setState({user: response.data})
+        }).catch(err =>{
+            this.setState({ mensaje: err.response.data})
+        });
+    }
+
+    DataTable() {
+        return this.state.user.map((res, i) => {
+          return <Tbody obj={res} key={i} />;
+        });
+      }
+    
     render() {
+        
         return (
             <div>
                 <div className="content-wrapper">
@@ -14,7 +49,7 @@ export default class AdminUsuarios extends Component {
                                             <h3 className="card-title">Gestion de usuarios</h3>
                                             <div className="card-tools">
                                                 <div className="input-group input-group-sm" style={{ width: 150 }}>
-                                                    <input type="text" name="table_search" className="form-control float-right" placeholder="Buscar dependencia" />
+                                                    <input type="text" name="table_search" className="form-control float-right" placeholder="Buscar usuario" />
                                                     <div className="input-group-append">
                                                         <button type="submit" className="btn btn-default">
                                                             <i className="fas fa-search" />
@@ -28,32 +63,14 @@ export default class AdminUsuarios extends Component {
                                             <table className="table table-hover text-nowrap">
                                                 <thead>
                                                     <tr>
-                                                        <th>ID</th>
+                                                        <th>Imagen</th>
                                                         <th>Nombre de Usuario</th>
-                                                        <th>Editar</th>
+                                                        <th>Correo</th>
+                                                        <th>Gestionar usuario</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>001</td>
-                                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                                        <td><a class="btn btn-block btn-outline-primary btn-xs"><i class="fas fa-edit"></i> Edit</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>002</td>
-                                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                                        <td><a class="btn btn-block btn-outline-primary btn-xs"><i class="fas fa-edit"></i> Edit</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>003</td>
-                                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                                        <td><a class="btn btn-block btn-outline-primary btn-xs"><i class="fas fa-edit"></i> Edit</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>004</td>
-                                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                                        <td><a class="btn btn-block btn-outline-primary btn-xs"><i class="fas fa-edit"></i> Edit</a></td>
-                                                    </tr>
+                                                    {this.DataTable()}
                                                 </tbody>
                                             </table>
                                         </div>
@@ -65,7 +82,7 @@ export default class AdminUsuarios extends Component {
                             {/* /.row */}
                             <div className="d-flex justify-content-end">
                                 <div className="d-flex justify-content-end w-25">
-                                    <a class="btn btn-block bg-institucional text-white btn-xs w-50">Nueva</a>
+                                    <a class="btn btn-block bg-institucional text-white btn-xs w-50">Nuevo usuario</a>
                                 </div>
                             </div>
                         </div>

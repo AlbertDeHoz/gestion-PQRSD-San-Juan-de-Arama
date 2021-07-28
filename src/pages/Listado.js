@@ -3,11 +3,14 @@ import ModalAddNew from "../components/ModalAddNew";
 import ModalGestionar from "../components/ModalGestionar";
 import DataGrid from "../components/DataGrid";
 import React from "react";
+import axios from 'axios'
 
 export default class Listado extends React.Component {
   constructor(props) {
     super(props);
+    let datos
     this.state = {
+      user: {},
       pqrsdsData: [],
       columns: [
         {
@@ -38,13 +41,36 @@ export default class Listado extends React.Component {
     };
   }
   componentDidMount(){
-    this.getPqrsd()
+    this.getInfo();
   }
-  async getPqrsd (){
-    const response = await fetch(`${window.$url_api}/api/pqrsd/`);
-    const data = await response.json();
-    this.setState({pqrsdsData:data});
-  }
+
+getInfo(){
+    const token = localStorage.getItem('auth-token');
+    
+    axios.get('http://localhost:5000/api/user/userinfo',{
+        headers: {'auth-token': token}
+    }).then(response => {
+        this.setState({user: response.data})
+        const datos = response.data._id
+        this.getPqrsd(datos)
+    }).catch(err =>{
+        this.setState({ mensaje: err.response.data})
+    });
+}
+
+getPqrsd(e){
+  //console.log(e)
+  const token = localStorage.getItem('auth-token');
+  axios.get(`http://localhost:5000/api/pqrsd/${e}/pqrsds`,{
+        headers: {'auth-token': token}
+    }).then(response => {
+        this.setState({pqrsdsData: response.data.pqrsds})
+        console.log(response.data.pqrsds)
+    }).catch(err =>{
+        this.setState({ mensaje: err.response.data})
+    });
+}
+
   async createPqrsd(){
     const response = await fetch(`${window.$url_api}/api/pqrsd/create`);
 
