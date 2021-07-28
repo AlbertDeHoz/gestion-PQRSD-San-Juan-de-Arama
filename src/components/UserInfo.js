@@ -35,20 +35,21 @@ export default class UserInfo extends Component {
 
     manejarInput(e){
         const{value, name} = e.target
+        if(value !== '')
         this.setState({[name]: value});
     }
 
     submitFormularioDatos = async e => {
         e.preventDefault();
         let postData = {
-            name: this.state.name,
-            email: this.state.email,
+            name: this.state.name!==''?(this.state.name):(this.state.user.name),
+            email: this.state.email!==''?(this.state.email):(this.state.user.email),
         }
         const token = localStorage.getItem('auth-token')
         var headers = {
             'auth-token': token
         }
-        axios.post('http://localhost:5000/api/user/update', postData, {
+        axios.post(`http://localhost:5000/api/user/update/${this.state.user._id}`, postData, {
             headers: headers
         }).then(response =>{
             this.setState({mensaje: response.data.mensaje});
@@ -103,11 +104,11 @@ export default class UserInfo extends Component {
                             </div>
                             <form onSubmit={this.submitFormularioDatos}>
                                 <div className="form-floating mb-4">
-                                    <input type="text" name="name" className="form-control" onChange={this.manejarInput} id="floatingInput" placeholder="Nombe de usuario" />
+                                    <input type="text" name="name" className="form-control" onChange={this.manejarInput} id="floatingInput" placeholder="Nombe de usuario" defaultValue={this.state.user.name} />
                                     <label htmlFor="floatingInput">Nuevo Nombre</label>
                                 </div>
                                 <div className="form-floating mb-4">
-                                    <input type="email" name="email" className="form-control" onChange={this.manejarInput} id="floatingInput" placeholder="Email"  />
+                                    <input type="email" name="email" className="form-control" onChange={this.manejarInput} id="floatingInput" placeholder="Email" defaultValue={this.state.user.email} />
                                     <label htmlFor="floatingInput">Nuevo Correo electrónico</label>
                                 </div>
                                 <input type="submit" value="Actualizar datos" className="btn bg-institucional text-white btn-xs w-100 p-2 mt-3" />

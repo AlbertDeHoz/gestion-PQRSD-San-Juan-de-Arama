@@ -64,7 +64,6 @@ export default class FormNewPQRSD extends Component {
     submitFormulario = async e => {
         e.preventDefault();
         let postData = {
-            _id: this.state.user._id,
             no_radicado: this.state.no_radicado,
             t_pqrsd: this.state.t_pqrsd,
             plazo_respuesta: this.state.plazo_respuesta,

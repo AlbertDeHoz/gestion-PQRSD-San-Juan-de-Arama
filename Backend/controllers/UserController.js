@@ -69,18 +69,24 @@ module.exports = {
         //Validaciones
         const {error} = actualizarValidacion(req.body);
         if(error) return res.status(400).send(error.details[0].message);
-
         //validar Correo
         const user = await User.findOne({email: req.body.email});
-        if(user) return res.status(400).send('El email ya está registrado');
-
+        const userId = await User.findById(req.params)
+        const userIdD = await User.findById(req.user._id)
+        try{
+            if(toString(userIdD._id) == toString(userId._id)){
+                const {name, email} = req.body;
+                await User.findByIdAndUpdate(req.user._id,{
+                name: name,
+                email: email
+            });
+                res.json({mensaje: 'Usuario Actualizado'});
+        }
+        }catch (error) {
+            return res.status(400).send(`El email que intenta ingresar ya está registrado`);
+        }
         //Actualizar datos
-        const {name, email} = req.body;
-        await User.findByIdAndUpdate(req.user._id,{
-            name: name,
-            email: email
-        });
-        res.json({mensaje: 'Usuario Actualizado'});
+        
         
     },
 

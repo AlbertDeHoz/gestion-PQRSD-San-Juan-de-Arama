@@ -41,7 +41,7 @@ const loginValidacion = (data) => {
 const actualizarValidacion = (data) => {
     const schema = Joi.object({
         name: Joi.string().min(6).required().messages({
-                'string.empty': 'El campo "Nombre" es obligatorio.',
+                'string.empty': 'El campo "Nombre" no puede estar vacío.',
                 'string.min': 'El "Nombre" debe ser mayor a {#limit} caracteres',
                 'amy.required': `El "Nombre" es Obligatorio`
         }),

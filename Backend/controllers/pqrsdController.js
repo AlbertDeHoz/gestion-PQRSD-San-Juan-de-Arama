@@ -7,6 +7,7 @@ module.exports = {
   list: async (req, res) => {
     //const pqrsds = await Pqrsd.find();
     const user = await User.findById(req.params).populate('pqrsds')
+    console.log(req.params)
     res.send(user)
     // res.status(200).json(pqrsds);
   },
