@@ -9,7 +9,7 @@ export default class FormNewPQRSD extends Component {
         time.setDate(time.getDate() + 15);
         this.state = {
             user: {},
-            no_radicado: today.getTime,
+            no_radicado: today.getTime(),
             f_recibido: date,
             t_pqrsd: '',
             ter_respuesta: '15',
