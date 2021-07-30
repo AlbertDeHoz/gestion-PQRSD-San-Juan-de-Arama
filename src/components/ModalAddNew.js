@@ -16,7 +16,7 @@ const ModalAddNew = (props) => {
             ></button>
           </div>
           <div className="modal-body">
-            <FormNewPQRSD submitForm = {(e) => props.submitForm(e)}/>
+            <FormNewPQRSD submitForm = {(e) => props.submitForm(e)} no_radicado = {props.no_radicado} />
           </div>
         </div>
       </div>

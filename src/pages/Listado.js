@@ -8,7 +8,6 @@ import axios from 'axios'
 export default class Listado extends React.Component {
   constructor(props) {
     super(props);
-    let datos
     this.state = {
       user: {},
       pqrsdsData: [],
