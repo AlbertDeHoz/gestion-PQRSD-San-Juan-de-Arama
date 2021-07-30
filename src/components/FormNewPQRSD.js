@@ -9,7 +9,7 @@ export default class FormNewPQRSD extends Component {
         time.setDate(time.getDate() + 15);
         this.state = {
             user: {},
-            no_radicado: '2021260711am',
+            no_radicado: today.getTime,
             f_recibido: date,
             t_pqrsd: '',
             ter_respuesta: '15',
@@ -49,6 +49,7 @@ export default class FormNewPQRSD extends Component {
     componentDidMount(){
         this.getInfo()
     }
+   
 
     getInfo(){
         const token = localStorage.getItem('auth-token');

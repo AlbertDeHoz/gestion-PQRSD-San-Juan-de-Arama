@@ -16,7 +16,7 @@ const ModalAddNew = () => {
             ></button>
           </div>
           <div className="modal-body">
-            <FormNewPQRSD data={FormNewPQRSD.postData}/>
+            <FormNewPQRSD />
           </div>
         </div>
       </div>

@@ -75,6 +75,12 @@ getPqrsd(e){
     const response = await fetch(`${window.$url_api}/api/pqrsd/create`);
 
   }
+
+  actualizarSegundos(){
+    const segundos = new Date().getTime();
+    return segundos;
+  }  
+
   render() {
     const url = window.location.pathname
     return (
@@ -120,7 +126,7 @@ getPqrsd(e){
                           modalId="nuevaPqrsd"
                           name="Crear Nueva PQRSD"
                         >
-                          <ModalAddNew />
+                          <ModalAddNew data={this.actualizarSegundos()} />
                         </ButtonLaunchModal>
                       </div>
                     </div>
