@@ -39,6 +39,7 @@ export default class Listado extends React.Component {
         },
       ],
     };
+    this.createPqrsd = this.createPqrsd.bind(this);
   }
   componentDidMount(){
     this.getInfo();
@@ -46,7 +47,7 @@ export default class Listado extends React.Component {
 
 getInfo(){
     const token = localStorage.getItem('auth-token');
-    
+
     axios.get('http://localhost:5000/api/user/userinfo',{
         headers: {'auth-token': token}
     }).then(response => {
@@ -70,16 +71,31 @@ getPqrsd(e){
         this.setState({ mensaje: err.response.data})
     });
 }
-
-  async createPqrsd(){
-    const response = await fetch(`${window.$url_api}/api/pqrsd/create`);
-
+//Recibe las pqrsd desde el <FormNewAdd/>
+  async createPqrsd(newPqrsd){
+    // Petición a la base de datos
+    const token = localStorage.getItem('auth-token');
+    const response = await fetch(`http://localhost:5000/api/pqrsd/create/${this.state.user._id}`,{
+      method:'POST',
+      headers:{
+        'auth-token':token,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newPqrsd)
+    })
+    // si la petición es correcta entoces que renderice la nueva pqrsd creada
+    if (response.ok){
+      // TODO: la base de datos tiene que responder con la pqrsd creada
+      //const data = await response.json();
+      const pqrsdsData = this.state.pqrsdsData;
+      this.setState({pqrsdsData:[...pqrsdsData,{...newPqrsd}]});
+    }
   }
 
   actualizarSegundos(){
     const segundos = new Date().getTime();
     return segundos;
-  }  
+  }
 
   render() {
     const url = window.location.pathname
@@ -126,7 +142,10 @@ getPqrsd(e){
                           modalId="nuevaPqrsd"
                           name="Crear Nueva PQRSD"
                         >
-                          <ModalAddNew data={this.actualizarSegundos()} />
+                          <ModalAddNew
+                          data={this.actualizarSegundos()}
+                          submitForm = {this.createPqrsd}
+                          />
                         </ButtonLaunchModal>
                       </div>
                     </div>
