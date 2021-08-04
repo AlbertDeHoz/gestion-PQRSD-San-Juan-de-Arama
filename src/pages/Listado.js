@@ -6,8 +6,6 @@ import axios from "axios";
 import ButtonLaunchModal from "../components/ButtonLaunchModal";
 import ModalAddNew from "../components/ModalAddNew";
 import DataGrid from "../components/DataGrid";
-import ModalGestionar from "../components/ModalGestionar";
-
 
 class Listado extends React.Component {
   constructor(props) {
@@ -15,7 +13,7 @@ class Listado extends React.Component {
     this.state = {
       user: {},
       pqrsdsData: [],
-      pqrsdToManage:{},
+      pqrsdToManage: {},
       columns: [
         {
           Header: "n radicado",
@@ -45,6 +43,7 @@ class Listado extends React.Component {
     };
     this.createPqrsd = this.createPqrsd.bind(this);
     this.getPqrsdToManage = this.getPqrsdToManage.bind(this);
+    this.updatePqrsdManaged = this.updatePqrsdManaged.bind(this);
   }
   componentDidMount() {
     this.getInfo();
@@ -107,16 +106,22 @@ class Listado extends React.Component {
     }
   }
 
-  getPqrsdToManage( pqrsd ){
+  getPqrsdToManage(pqrsd) {
     const { no_radicado } = pqrsd;
     const pqrsdsData = this.state.pqrsdsData;
-    const pqrsdToManag = pqrsdsData.find(data => data.no_radicado === no_radicado)
-    console.log(pqrsdToManag)
-    this.setState({ pqrsdToManage:pqrsdToManag });
+    const pqrsdToManag = pqrsdsData.find(
+      (data) => data.no_radicado === no_radicado
+    );
+    console.log(pqrsdToManag);
+    this.setState({ pqrsdToManage: pqrsdToManag });
   }
 
-  submitPqrsdManaged( fieldManaged ){
-    console.log( fieldManaged )
+  //se recibe el no_radicado de la pqrsd administrada y los campos administrados(fieldManaged) desde el componente GestionarPqrsd
+  //Gracias al no_radicado se localiza la pqrsd que está siendo gestionada y se asigna a pqrsdManaged
+  //Se le asignan los campos administrados a pqrsdManaged
+  updatePqrsdManaged(no_radicado,fieldManaged) {
+    const pqrsdManaged = this.state.pqrsdsData.find( pqrsd => pqrsd.no_radicado === no_radicado );
+    Object.assign(pqrsdManaged,fieldManaged);
   }
   render() {
     let { url, path } = this.props.match;
@@ -124,63 +129,62 @@ class Listado extends React.Component {
       <div className="content-wrapper">
         <Switch>
           <Route exact path={`${path}`}>
-              {/* Content Header (Page header) */}
-              <div className="content-header">
-                <div className="container-fluid">
-                  <div className="row mb-2">
-                    <div className="col-sm-6">
-                      <h1 className="m-0 text-blue-institucional">
-                        Listado de PQRSDs
-                      </h1>
-                    </div>
-                    {/* /.col */}
-                    <div className="col-sm-6">
-                      <ol className="breadcrumb float-sm-right">
-                        <li className="breadcrumb-item active">{url}</li>
-                      </ol>
-                    </div>
-                    {/* /.col */}
+            {/* Content Header (Page header) */}
+            <div className="content-header">
+              <div className="container-fluid">
+                <div className="row mb-2">
+                  <div className="col-sm-6">
+                    <h1 className="m-0 text-blue-institucional">
+                      Listado de PQRSDs
+                    </h1>
                   </div>
-                  {/* /.row */}
+                  {/* /.col */}
+                  <div className="col-sm-6">
+                    <ol className="breadcrumb float-sm-right">
+                      <li className="breadcrumb-item active">{url}</li>
+                    </ol>
+                  </div>
+                  {/* /.col */}
                 </div>
-                {/* /.container-fluid */}
+                {/* /.row */}
               </div>
-              {/* /.content-header */}
-              {/* Main table */}
-              <section className="content">
-                <div className="container-fluid">
-                  <div className="row">
-                    <div className="col-12">
-                      <div className="card">
-                        <div className="d-flex justify-content-between">
-                          <h3 className="card-title text-blue-institucional mt-3 ml-4">
-                            Listado total de PQRSDs San Juan de Arama
-                          </h3>
-                          <div className="mt-3 mr-4">
-                            <ButtonLaunchModal
-                              class="btn btn-block btn-institucional text-white btn-xs ml-auto"
-                              modalId="nuevaPqrsd"
-                              name="Crear Nueva PQRSD"
-                            >
-                              <ModalAddNew
-                                submitForm={this.createPqrsd}
-                              />
-                            </ButtonLaunchModal>
-                          </div>
-                        </div>
-                        {/* /.card-header */}
-                        <div className="card-body" id="datagrid">
-                          <DataGrid
-                            data={this.state.pqrsdsData}
-                            columns={this.state.columns}
-                            clickOnPqrsdToManage = {this.getPqrsdToManage}
+              {/* /.container-fluid */}
+            </div>
+            {/* /.content-header */}
+            {/* Main table */}
+            <section className="content">
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-12">
+                    <div className="card">
+                      <div className="d-flex justify-content-between">
+                        <h3 className="card-title text-blue-institucional mt-3 ml-4">
+                          Listado total de PQRSDs San Juan de Arama
+                        </h3>
+                        <div className="mt-3 mr-4">
+                          <ButtonLaunchModal
+                            class="btn btn-block btn-institucional text-white btn-xs ml-auto"
+                            modalId="nuevaPqrsd"
+                            name="Crear Nueva PQRSD"
                           >
-                            <Link to={`${path}/gestionar`} >
+                            <ModalAddNew submitForm={this.createPqrsd} />
+                          </ButtonLaunchModal>
+                        </div>
+                      </div>
+                      {/* /.card-header */}
+                      <div className="card-body" id="datagrid">
+                        <DataGrid
+                          data={this.state.pqrsdsData}
+                          columns={this.state.columns}
+                          clickOnPqrsdToManage={this.getPqrsdToManage}
+                        >
+                          <Link to={`${path}/gestionar`}>
                             <button className="btn btn-block btn-outline-primary btn-xs">
-                              <i className="fas fa-edit"/>Gestionar
+                              <i className="fas fa-edit" />
+                              Gestionar
                             </button>
-                            </Link>
-                            {/* <ButtonLaunchModal
+                          </Link>
+                          {/* <ButtonLaunchModal
                               class="btn btn-block btn-outline-primary btn-xs"
                               modalId="gestion"
                               classIcon="fas fa-edit"
@@ -188,23 +192,23 @@ class Listado extends React.Component {
                             >
                               <ModalGestionar data={this.state.pqrsdsData} />
                             </ButtonLaunchModal> */}
-                          </DataGrid>
-                        </div>
-                        {/* /.card-body */}
+                        </DataGrid>
                       </div>
+                      {/* /.card-body */}
                     </div>
-                    {/* /.col */}
                   </div>
-                  {/* /.row */}
+                  {/* /.col */}
                 </div>
-                {/* /.container-fluid */}
-              </section>
+                {/* /.row */}
+              </div>
+              {/* /.container-fluid */}
+            </section>
           </Route>
-          <Route path={`${path}/:topicId`}>
+          <Route path={`${path}/gestionar`}>
             <GestionarPQRSD 
             pqrsdToManage={this.state.pqrsdToManage}
-            handlePqrsdManaged={this.submitPqrsdManaged}
-            />
+            handlePqrsdManaged={this.updatePqrsdManaged}
+            /> 
           </Route>
         </Switch>
       </div>

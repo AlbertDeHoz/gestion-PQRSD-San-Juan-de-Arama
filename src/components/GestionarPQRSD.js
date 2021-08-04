@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, withRouter } from "react-router-dom";
 
-export default class GestionarPQRSD extends React.Component {
+class GestionarPQRSD extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,15 +12,25 @@ export default class GestionarPQRSD extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handlePqrsdManaged = this.handlePqrsdManaged.bind(this);
   }
+  componentDidMount() {
+    this.setState({
+      fieldManaged: {
+        observaciones: this.props.pqrsdToManage.observaciones,
+      },
+    });
+  }
 
   handlePqrsdManaged(e) {
     e.preventDefault();
     const { ...fieldManaged } = this.state.fieldManaged;
-    // Object.assign(pqrsdManaged,this.state.fieldManaged);
-    // console.log(pqrsdManaged);
-    this.props.handlePqrsdManaged(fieldManaged);
+    const no_radicado = this.props.pqrsdToManage.no_radicado;
+    //se pasa el no de radicado y los campos de administración gestionados al componente padre
+    this.props.handlePqrsdManaged(no_radicado, fieldManaged);
+    this.props.history.push("/Pqrsd/Listado");
   }
-  verifyForm() {}
+  verifyForm() {
+    //TODO verificación del formulario
+  }
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({
@@ -192,3 +202,5 @@ export default class GestionarPQRSD extends React.Component {
     );
   }
 }
+
+export default withRouter((props) => <GestionarPQRSD {...props} />);
