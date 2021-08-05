@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Tbody from '../../components/Tboby';
+import Tbody from '../../components/Tbody/TbobyUser';
+import { Link } from 'react-router-dom';
 
 export default class AdminUsuarios extends Component {
     constructor(){
@@ -82,7 +83,7 @@ export default class AdminUsuarios extends Component {
                             {/* /.row */}
                             <div className="d-flex justify-content-end">
                                 <div className="d-flex justify-content-end w-25">
-                                    <a class="btn btn-block bg-institucional text-white btn-xs w-50">Nuevo usuario</a>
+                                    <Link to={"/registro"} class="btn btn-block bg-institucional text-white btn-xs w-50">Nuevo usuario</Link>
                                 </div>
                             </div>
                         </div>

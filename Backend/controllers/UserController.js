@@ -119,8 +119,16 @@ module.exports = {
         }
 
     },
-    delete: async (req,res) =>{
-        
+    delete: async (req,res,next) =>{
+    User.findByIdAndRemove(req.params._id, (error, data) => {
+        if (error) {
+          return next(error);
+        } else {
+          res.status(200).json({
+            msg: data
+          })
+        }
+      })
     },
     upload: async (req, res) =>{
         const url = `${req.protocol}://${req.get('host')}`;

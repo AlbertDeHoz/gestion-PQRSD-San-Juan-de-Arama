@@ -16,6 +16,8 @@ import AdminUsuarios from './Admin/AdminUsuarios';
 import Welcome from '../components/Welcome';
 import UserInfo from '../components/UserInfo'
 import '../App.css';
+import EditTipoPqrsd from '../components/EditTipoPqrsd';
+import CreateTipoPqrsd from '../components/CreateTipoPqrsd';
 
 function Aplicativo() {
   return (
@@ -29,7 +31,9 @@ function Aplicativo() {
                 <Route path="/Pqrsd/Listado"><Listado/></Route>
                 <Route path="/Pqrsd/admin-dependencias"><AdminDependencias/></Route>
                 <Route path="/Pqrsd/admin-usuarios"><AdminUsuarios/></Route>
-                <Route path="/Pqrsd/admin-tipos-PQRSD"><AdminTiposPQRSD/></Route>
+                <Route exact path="/Pqrsd/admin-tipos-PQRSD"><AdminTiposPQRSD/></Route>
+                <Route path="/Pqrsd/admin-tipos-PQRSD/edit-TipoPqrsd/:id" component={EditTipoPqrsd} />
+                <Route exact path="/Pqrsd/admin-tipos-PQRSD/new-TipoPqrsd" component={CreateTipoPqrsd} />
                 <Route path="/Pqrsd/admin-mecanismos-recepcion"><AdminMecanismos/></Route>
                 <Route path="/Pqrsd/admin-tipos-notificacion"><AdminTiposNotificacion/></Route>
                 <Route path="/Pqrsd/admin-tiempos-respuesta"><AdminTiemposRespuesta/></Route>
