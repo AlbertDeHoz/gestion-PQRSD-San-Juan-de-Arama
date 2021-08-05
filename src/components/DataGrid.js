@@ -64,7 +64,7 @@ const DataGrid = (props) => {
                       <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
                     );
                   })}
-                  <td onClick={function(){console.log(row)}}>{props.children}</td>
+                  <td><div onClick={() => props.clickOnPqrsdToManage(row.values)}>{props.children}</div></td>
                 </tr>
               );
             })}
