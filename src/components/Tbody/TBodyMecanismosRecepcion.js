@@ -30,7 +30,7 @@ export default class MecanismosRecepcionTableRow extends Component {
             <Link to={"admin-mecanismos-recepcion/edit-Mecanismo-Recepcion/"  + this.props.obj._id} className="btn btn-block btn-primary btn-xs mr-auto">
           <i className="fas fa-edit" /> Editar
           </Link> 
-          <Button onClick={this.deleteTipoPqrsd} className="btn btn-block btn-danger btn-xs ml-3">
+          <Button onClick={this.deleteMecanismosRecepcion} className="btn btn-block btn-danger btn-xs ml-3">
             <i className="fas fa-trash" /> Eliminar
           </Button>
           </div>
