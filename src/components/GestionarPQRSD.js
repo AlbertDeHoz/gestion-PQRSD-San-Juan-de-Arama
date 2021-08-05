@@ -23,9 +23,13 @@ class GestionarPQRSD extends React.Component {
   handlePqrsdManaged(e) {
     e.preventDefault();
     const { ...fieldManaged } = this.state.fieldManaged;
-    const no_radicado = this.props.pqrsdToManage.no_radicado;
+    const { ...pqrsdToManage } = this.props.pqrsdToManage;
+    const { _id } = pqrsdToManage;
+
     //se pasa el no de radicado y los campos de administración gestionados al componente padre
-    this.props.handlePqrsdManaged(no_radicado, fieldManaged);
+    Object.assign(pqrsdToManage,fieldManaged);
+    console.log(pqrsdToManage)
+    this.props.handlePqrsdManaged( _id, pqrsdToManage );
     this.props.history.push("/Pqrsd/Listado");
   }
   verifyForm() {
