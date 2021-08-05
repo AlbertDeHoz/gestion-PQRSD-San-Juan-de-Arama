@@ -1,13 +1,13 @@
 const router = require('express').Router();
 //Importar modelo controlador
-const TiposPqrsdController = require('../controllers/TiposPqrsdController');
+const MecanismosRecepcionController = require('../controllers/MecanismosRecepcionController');
 //Verificar token
 const verificarToken = require('./verificarToken')
 
-router.get('/',verificarToken, TiposPqrsdController.list);
-router.post('/create', verificarToken, TiposPqrsdController.create);
-router.get('/edit/:_id', TiposPqrsdController.edit);
-router.put('/update/:_id', TiposPqrsdController.update);
-router.delete('/delete/:_id', TiposPqrsdController.delete);
+router.get('/',verificarToken, MecanismosRecepcionController.list);
+router.post('/create', verificarToken, MecanismosRecepcionController.create);
+router.get('/edit/:_id', MecanismosRecepcionController.edit);
+router.put('/update/:_id', MecanismosRecepcionController.update);
+router.delete('/delete/:_id', MecanismosRecepcionController.delete);
 
 module.exports = router;

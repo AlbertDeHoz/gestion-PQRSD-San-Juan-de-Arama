@@ -75,7 +75,7 @@ export default class CreateTipoPqrsd extends Component {
                                         onChange={this.onChangeTipoPqrsdNDias}/>
                                     </Form.Group>
 
-                                    <button className="btn btn-institucional" type="submit">Crear pqrsd</button>
+                                    <button className="btn btn-institucional" type="submit">Crear tipo de PQRSD</button>
                                 </Form>
                             </div>
                         </div>

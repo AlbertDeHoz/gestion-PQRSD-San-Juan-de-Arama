@@ -16,8 +16,10 @@ import AdminUsuarios from './Admin/AdminUsuarios';
 import Welcome from '../components/Welcome';
 import UserInfo from '../components/UserInfo'
 import '../App.css';
-import EditTipoPqrsd from '../components/EditTipoPqrsd';
-import CreateTipoPqrsd from '../components/CreateTipoPqrsd';
+import EditTipoPqrsd from '../components/tipoPqrsd/EditTipoPqrsd';
+import CreateTipoPqrsd from '../components/tipoPqrsd/CreateTipoPqrsd';
+import EditMecanismoRecepcion from '../components/mecanismosRecepcion/EditMecanismoRecepcion'
+import CreateMecanismoRecepcion from '../components/mecanismosRecepcion/CreateMecanismoRecepcion'
 
 function Aplicativo() {
   return (
@@ -34,7 +36,9 @@ function Aplicativo() {
                 <Route exact path="/Pqrsd/admin-tipos-PQRSD"><AdminTiposPQRSD/></Route>
                 <Route path="/Pqrsd/admin-tipos-PQRSD/edit-TipoPqrsd/:id" component={EditTipoPqrsd} />
                 <Route exact path="/Pqrsd/admin-tipos-PQRSD/new-TipoPqrsd" component={CreateTipoPqrsd} />
-                <Route path="/Pqrsd/admin-mecanismos-recepcion"><AdminMecanismos/></Route>
+                <Route exact path="/Pqrsd/admin-mecanismos-recepcion"><AdminMecanismos/></Route>
+                <Route path="/Pqrsd/admin-mecanismos-recepcion/edit-Mecanismo-Recepcion/:id" component={EditMecanismoRecepcion} />
+                <Route exact path="/Pqrsd/admin-mecanismos-recepcion/new-Mecanismo-Recepcion" component={CreateMecanismoRecepcion} />
                 <Route path="/Pqrsd/admin-tipos-notificacion"><AdminTiposNotificacion/></Route>
                 <Route path="/Pqrsd/admin-tiempos-respuesta"><AdminTiemposRespuesta/></Route>
                 <Route path="/Pqrsd/admin-empresas-transporte"><AdminEmpresasTransportadoras/></Route>

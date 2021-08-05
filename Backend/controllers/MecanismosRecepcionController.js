@@ -4,7 +4,7 @@ const {mecanismosRecepcionValidacion} = require("../validate/admin.validate");
 module.exports = {
     //List
     list: async (req, res, next) => {
-        TiposPqrsd.find((error, data) => {
+        MecanismosRecepcion.find((error, data) => {
             if (error) {
               return next(error)
             } else {
@@ -19,21 +19,21 @@ module.exports = {
         if(error) return res.status(400).send(error.details[0].message);
 
         //Ingresar en la base de datos
-        const tipoPqrsd = new TiposPqrsd({
+        const mecanismosRecepcion = new MecanismosRecepcion({
             name: req.body.name,
             n_dias: req.body.n_dias,
         })
         // Guardar usuario
         try{
-            const tipoPqrsdSave = await tipoPqrsd.save();
-            res.json({mensaje: "Tipo de PQRSD creada correctamente"})
+            const tipoPqrsdSave = await mecanismosRecepcion.save();
+            res.json({mensaje: "Mecanismo de Recepción creado correctamente"})
         }catch(err){
             res.status(400).send(err)
         }
     },
       // Update tipo pqrsd
     update:async (req, res, next) => {
-        TiposPqrsd.findByIdAndUpdate(req.params._id, {
+        MecanismosRecepcion.findByIdAndUpdate(req.params._id, {
         $set: req.body
     }, (error, data) => {
       if (error) {
@@ -46,7 +46,7 @@ module.exports = {
     })
   },
    edit: async (req, res, next) => {
-    TiposPqrsd.findById(req.params._id, (error, data) => {
+    MecanismosRecepcion.findById(req.params._id, (error, data) => {
       if (error) {
         return next(error)
       } else {
@@ -56,7 +56,7 @@ module.exports = {
   },
   //Delete
     delete: async (req, res, next) => {
-    TiposPqrsd.findByIdAndRemove(req.params._id, (error, data) => {
+        MecanismosRecepcion.findByIdAndRemove(req.params._id, (error, data) => {
       if (error) {
         return next(error);
       } else {
