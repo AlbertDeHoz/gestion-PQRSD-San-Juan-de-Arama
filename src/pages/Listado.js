@@ -65,7 +65,6 @@ getPqrsd(e){
         headers: {'auth-token': token}
     }).then(response => {
         this.setState({pqrsdsData: response.data.pqrsds})
-        console.log(response.data.pqrsds)
     }).catch(err =>{
         this.setState({ mensaje: err.response.data})
     });

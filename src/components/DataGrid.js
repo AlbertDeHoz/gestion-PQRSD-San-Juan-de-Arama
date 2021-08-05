@@ -34,7 +34,7 @@ const DataGrid = (props) => {
   return (
     <div className="card">
       <div className="card-body">
-        <table className="table table-hover text-nowrap" {...getTableProps()}>
+        <table className="table table-hover" {...getTableProps()}>
           <thead>
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>

@@ -1,5 +1,7 @@
+import axios from "axios";
 import React, { Component } from "react";
 import AlertError from "./AlertError";
+import SelectComponent from "./SelectComponent";
 export default class FormNewPQRSD extends Component {
   constructor() {
     super();
@@ -14,6 +16,7 @@ export default class FormNewPQRSD extends Component {
     time.setDate(time.getDate() + 15);
     this.state = {
       user: {},
+      tPqrsd:[],
       mensaje: "",
       t_respuesta:
         time.getDate() + "/" + (time.getMonth() + 1) + "/" + time.getFullYear(), // comento esto porque en la petición no se estaba mandando este dato
@@ -47,7 +50,11 @@ export default class FormNewPQRSD extends Component {
     };
     this.manejarInput = this.manejarInput.bind(this);
     this.submitFormulario = this.submitFormulario.bind(this);
+    this.getInfoTiposPqrsd = this.getInfoTiposPqrsd.bind(this)
   }
+  componentDidMount(){
+    this.getInfoTiposPqrsd()
+}
 
   manejarInput(e) {
     const { name, value } = e.target;
@@ -60,7 +67,19 @@ export default class FormNewPQRSD extends Component {
     });
   }
 
+  //obtener tipos de pqrsd
+  getInfoTiposPqrsd(){
+    const token = localStorage.getItem('auth-token');
+    axios.get('http://localhost:5000/api/Tipospqrsd',{
+        headers: {'auth-token': token}
+    }).then(response => {
+        this.setState({tPqrsd: response.data})
+    }).catch(err =>{
+        this.setState({ mensaje: err.response.data})
+    });
+}
   validateForm() {
+    console.log(this.state.tPqrsd)
     const pqrsdData = this.state.pqrsdData;
     const fieldsNotEmpty = ["nombre_solicitante", "entidad", "direccion", "t_pqrsd"];
     const filterEmpty = fieldsNotEmpty.filter(
@@ -205,13 +224,13 @@ export default class FormNewPQRSD extends Component {
             </div>
             <div className="mb-3">
               <label className="form-label">Tipo de solicitud</label>
-              <input
-                type="text"
+              <select
                 name="t_pqrsd"
-                className="form-control"
+                className="form-select"
                 onChange={this.manejarInput}
-                placeholder="Email"
-              />
+              >
+                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
+                {this.state.tPqrsd.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}</select>
             </div>
             <div className="mb-3">
               <label className="form-label">Mecanismo de Recepción</label>
