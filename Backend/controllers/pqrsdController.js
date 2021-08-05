@@ -11,8 +11,14 @@ module.exports = {
     res.send(user)
     // res.status(200).json(pqrsds);
   },
-  update: async (req, res) => {
-    //TODO
+  manage: async (req, res) => {
+    const pqrsd = await Pqrsd.findOneAndUpdate(
+      { _id:req.params.id },
+      req.body,
+      { new: true }
+    )
+    console.log(pqrsd)
+    res.status(200).json(pqrsd)
   },
   create: async (req, res) => {
     // const { ...pqrsdData } = req.body;
