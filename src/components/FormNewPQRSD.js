@@ -17,6 +17,7 @@ export default class FormNewPQRSD extends Component {
     this.state = {
       user: {},
       tPqrsd:[],
+      mecaRecep:[],
       mensaje: "",
       t_respuesta:
         time.getDate() + "/" + (time.getMonth() + 1) + "/" + time.getFullYear(), // comento esto porque en la petición no se estaba mandando este dato
@@ -54,6 +55,7 @@ export default class FormNewPQRSD extends Component {
   }
   componentDidMount(){
     this.getInfoTiposPqrsd()
+    this.getInfoMecanismosRecepcion()
 }
 
   manejarInput(e) {
@@ -78,6 +80,19 @@ export default class FormNewPQRSD extends Component {
         this.setState({ mensaje: err.response.data})
     });
 }
+
+//obtener tipos de pqrsd
+getInfoMecanismosRecepcion(){
+  const token = localStorage.getItem('auth-token');
+  axios.get('http://localhost:5000/api/Mecanismos-Recepcion',{
+      headers: {'auth-token': token}
+  }).then(response => {
+      this.setState({mecaRecep: response.data})
+  }).catch(err =>{
+      this.setState({ mensaje: err.response.data})
+  });
+}
+
   validateForm() {
     console.log(this.state.tPqrsd)
     const pqrsdData = this.state.pqrsdData;
@@ -234,13 +249,13 @@ export default class FormNewPQRSD extends Component {
             </div>
             <div className="mb-3">
               <label className="form-label">Mecanismo de Recepción</label>
-              <input
-                type="text"
+              <select
                 name="mec_recepcion"
-                className="form-control"
+                className="form-select"
                 onChange={this.manejarInput}
-                placeholder="Email"
-              />
+              >
+                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
+                {this.state.mecaRecep.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}</select>
             </div>
             <div className="mb-3">
               <label className="form-label">Entidad</label>
