@@ -20,6 +20,8 @@ export default class FormNewPQRSD extends Component {
       mecaRecep:[],
       Dependencias:[],
       EmpTransporte:[],
+      EstadosPqrsd:[],
+      Tramites:[],
       mensaje: "",
       t_respuesta:
         time.getDate() + "/" + (time.getMonth() + 1) + "/" + time.getFullYear(), // comento esto porque en la petición no se estaba mandando este dato
@@ -60,6 +62,8 @@ export default class FormNewPQRSD extends Component {
     this.getInfoMecanismosRecepcion()
     this.getInfoDependencias()
     this.getInfoEmpresasTransporte()
+    this.getInfoEstadosPqrsd()
+    this.getInfoTramites()
 }
 
   manejarInput(e) {
@@ -116,6 +120,30 @@ getInfoEmpresasTransporte(){
       headers: {'auth-token': token}
   }).then(response => {
       this.setState({EmpTransporte: response.data})
+  }).catch(err =>{
+      this.setState({ mensaje: err.response.data})
+  });
+}
+
+//obtener Estados de Pqrsd
+getInfoEstadosPqrsd(){
+  const token = localStorage.getItem('auth-token');
+  axios.get('http://localhost:5000/api/Estados-Pqrsd',{
+      headers: {'auth-token': token}
+  }).then(response => {
+      this.setState({EstadosPqrsd: response.data})
+  }).catch(err =>{
+      this.setState({ mensaje: err.response.data})
+  });
+}
+
+//obtener Tramites
+getInfoTramites(){
+  const token = localStorage.getItem('auth-token');
+  axios.get('http://localhost:5000/api/Tramites',{
+      headers: {'auth-token': token}
+  }).then(response => {
+      this.setState({Tramites: response.data})
   }).catch(err =>{
       this.setState({ mensaje: err.response.data})
   });
@@ -214,14 +242,16 @@ getInfoEmpresasTransporte(){
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">Trámites</label>
-              <input
-                type="text"
+              <label className="form-label">Tramite en SUIT al que pertenece</label>
+              <select
                 name="tramites"
-                className="form-control"
+                className="form-select"
                 onChange={this.manejarInput}
-                placeholder="Dependencia"
-              />
+              >
+                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
+                {this.state.Tramites.map(res => <option key={res.name} value={res.name}>{res.codigo} - {res.name}</option>)}
+                <option key="Ninguno" value="Ninguno" defaultValue>Ninguno</option>
+                </select>
             </div>
             <div className="mb-3">
               <label className="form-label">Numero de Oficio de Respuesta</label>
@@ -298,7 +328,7 @@ getInfoEmpresasTransporte(){
                 placeholder="Email"
               />
             </div>
-            <div>
+            {/* <div>
               <label className="form-label">
                 Adjuntar documento de Solicitud
               </label>
@@ -309,8 +339,8 @@ getInfoEmpresasTransporte(){
                 onChange={this.manejarInput}
                 placeholder="no hay archivo seleccionado"
               />
-            </div>
-            <div>
+            </div> */}
+            <div className="mb-3">
               <label className="form-label">Tipo de Notificación</label>
               <input
                 type="text"
@@ -320,7 +350,7 @@ getInfoEmpresasTransporte(){
                 placeholder="no hay archivo seleccionado"
               />
             </div>
-            <div>
+            <div className="mb-3">
               <label className="form-label">Empresa de Transporte</label>
               <select
                 name="emp_transporte"
@@ -331,6 +361,17 @@ getInfoEmpresasTransporte(){
                 {this.state.EmpTransporte.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}
                 <option key="otros" value="Otros" defaultValue>Otra</option>
                 <option key="Ninguna" value="Ninguna" defaultValue>Ninguna</option>
+                </select>
+            </div>
+            <div>
+              <label className="form-label">Estado de la Solicitud</label>
+              <select
+                name="status"
+                className="form-select"
+                onChange={this.manejarInput}
+              >
+                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
+                {this.state.EstadosPqrsd.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}
                 </select>
             </div>
           </div>

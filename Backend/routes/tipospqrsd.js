@@ -1,8 +1,6 @@
 const router = require('express').Router();
 //Importar modelo controlador
 const TiposPqrsdController = require('../controllers/TiposPqrsdController');
-//Importar modelo user
-const TiposPqrsd = require('../models/TiposPqrsd')
 //Verificar token
 const verificarToken = require('../routes/verificarToken')
 

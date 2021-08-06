@@ -27,6 +27,8 @@ import CreateEmpresaTransporte from '../components/empresasTransporte/CreateEmpr
 import EditEmpresaTransporte from '../components/empresasTransporte/EditEmpresaTransporte'
 import CreateEstadoPqrsd from '../components/EstadosPqrsd/CreateEstadoPqrsd'
 import EditEstadoPqrsd from '../components/EstadosPqrsd/EditEstadoPqrsd'
+import CreateTramite from '../components/Tramites/CreateTramite'
+import EditTramite from '../components/Tramites/EditTramite'
 
 function Aplicativo() {
   return (
@@ -65,7 +67,9 @@ function Aplicativo() {
                 <Route path="/Pqrsd/admin-estados-pqrsd/edit-Estado-Pqrsd/:id" component={EditEstadoPqrsd} />
                 <Route exact path="/Pqrsd/admin-estados-pqrsd/new-Estado-Pqrsd" component={CreateEstadoPqrsd} />
 
-                <Route path="/Pqrsd/admin-tramites"><AdminTramites/></Route>
+                <Route exact path="/Pqrsd/admin-tramites"><AdminTramites/></Route>
+                <Route path="/Pqrsd/admin-tramites/edit-Tramite/:id" component={EditTramite} />
+                <Route exact path="/Pqrsd/admin-tramites/new-Tramite" component={CreateTramite} />
             </Switch>
           <Footer/>
     </div>

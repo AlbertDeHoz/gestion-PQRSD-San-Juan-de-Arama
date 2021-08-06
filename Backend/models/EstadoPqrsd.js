@@ -13,4 +13,4 @@ const estadoPqrsdSchema = new Schema(
 
 );
 
-module.exports = mongoose.model("estadoPqrsdSchema", estadoPqrsdSchema);
+module.exports = mongoose.model("EstadoPqrsd", estadoPqrsdSchema);

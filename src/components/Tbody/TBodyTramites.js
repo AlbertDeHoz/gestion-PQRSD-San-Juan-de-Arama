@@ -7,15 +7,15 @@ import AdminTiposPQRSD from '../../pages/Admin/AdminTiposPQRSD'
 export default class TipoPqrsdTableRow extends Component {
   constructor(props) {
     super(props);
-    this.deleteTipoPqrsd = this.deleteTipoPqrsd.bind(this);
+    this.deleteTramite = this.deleteTramite.bind(this);
   }
 
-  deleteTipoPqrsd() {
+  deleteTramite() {
     axios.delete(
-        'http://localhost:5000/api/Tipospqrsd/delete/' + this.props.obj._id
+        'http://localhost:5000/api/Tramites/delete/' + this.props.obj._id
       )
       .then((res) => {
-        console.log("PQRSD borrada con exito");
+        console.log("Tramite borrado con exito");
       })
       .catch((error) => {
         console.log(error);
@@ -25,14 +25,14 @@ export default class TipoPqrsdTableRow extends Component {
   render() {
     return (
       <tr>
+        <td>{this.props.obj.codigo}</td>
         <td>{this.props.obj.name}</td>
-        <td>{this.props.obj.n_dias} días</td>
-        <td>
+        <td className="w-25">
           <div className="d-flex align-items-end">
-            <Link to={"admin-tipos-PQRSD/edit-TipoPqrsd/"  + this.props.obj._id} className="btn btn-block btn-primary btn-xs mr-auto">
+            <Link to={"admin-tramites/edit-Tramite/"  + this.props.obj._id} className="btn btn-block btn-primary btn-xs mr-auto">
           <i className="fas fa-edit" /> Editar
           </Link> 
-          <Button onClick={this.deleteTipoPqrsd} className="btn btn-block btn-danger btn-xs ml-3">
+          <Button onClick={this.deleteTramite} className="btn btn-block btn-danger btn-xs ml-2">
             <i className="fas fa-trash" /> Eliminar
           </Button>
           </div>
