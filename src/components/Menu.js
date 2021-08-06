@@ -120,12 +120,6 @@ export default class UserInfo extends Component {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="/Pqrsd/admin-tiempos-respuesta" className={`nav-link text-white bg-active-item ${url == '/Pqrsd/admin-tiempos-respuesta' ? "active-item":""}`}>
-                      <i className="far fa-check-circle nav-icon" />
-                      <p>Tiempos de respuesta</p>
-                    </Link>
-                  </li>
-                  <li className="nav-item">
                     <Link to="/Pqrsd/admin-empresas-transporte" className={`nav-link text-white bg-active-item d-flex align-items-center ${url == '/Pqrsd/admin-empresas-transporte' ? "active-item":""}`}>
                       <i className="far fa-check-circle nav-icon" />
                       <div><p>Empresas transportadoras</p></div>
@@ -138,7 +132,7 @@ export default class UserInfo extends Component {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="/Pqrsd/admin-estados-pqrsd" className={`nav-link text-white bg-active-item d-flex align-items-center ${url == '/Pqrsd/admin-tramites' ? "active-item":""}`}>
+                    <Link to="/Pqrsd/admin-estados-pqrsd" className={`nav-link text-white bg-active-item d-flex align-items-center ${url == '/Pqrsd/admin-estados-pqrsd' ? "active-item":""}`}>
                       <i className="far fa-check-circle nav-icon" />
                       <div><p>Estados de PQRSD</p></div>
                     </Link>

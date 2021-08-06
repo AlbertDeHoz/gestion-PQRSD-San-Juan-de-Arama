@@ -19,6 +19,7 @@ export default class FormNewPQRSD extends Component {
       tPqrsd:[],
       mecaRecep:[],
       Dependencias:[],
+      EmpTransporte:[],
       mensaje: "",
       t_respuesta:
         time.getDate() + "/" + (time.getMonth() + 1) + "/" + time.getFullYear(), // comento esto porque en la petición no se estaba mandando este dato
@@ -58,6 +59,7 @@ export default class FormNewPQRSD extends Component {
     this.getInfoTiposPqrsd()
     this.getInfoMecanismosRecepcion()
     this.getInfoDependencias()
+    this.getInfoEmpresasTransporte()
 }
 
   manejarInput(e) {
@@ -102,6 +104,18 @@ getInfoDependencias(){
       headers: {'auth-token': token}
   }).then(response => {
       this.setState({Dependencias: response.data})
+  }).catch(err =>{
+      this.setState({ mensaje: err.response.data})
+  });
+}
+
+//obtener Empresas Transportadoras
+getInfoEmpresasTransporte(){
+  const token = localStorage.getItem('auth-token');
+  axios.get('http://localhost:5000/api/Empresas-Transportadoras',{
+      headers: {'auth-token': token}
+  }).then(response => {
+      this.setState({EmpTransporte: response.data})
   }).catch(err =>{
       this.setState({ mensaje: err.response.data})
   });
@@ -184,10 +198,13 @@ getInfoDependencias(){
                 onChange={this.manejarInput}
               >
                 <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
-                {this.state.Dependencias.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}</select>
+                {this.state.Dependencias.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}
+                <option key="otros" value="Otros" defaultValue>Otros</option>
+                </select>
+                
             </div>
             <div className="mb-3">
-              <label className="form-label">descripcion</label>
+              <label className="form-label">Descripcion</label>
               <input
                 type="text"
                 name="descripcion"
@@ -197,7 +214,7 @@ getInfoDependencias(){
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">tramites</label>
+              <label className="form-label">Trámites</label>
               <input
                 type="text"
                 name="tramites"
@@ -207,7 +224,7 @@ getInfoDependencias(){
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">n_of_respuesta</label>
+              <label className="form-label">Numero de Oficio de Respuesta</label>
               <input
                 type="text"
                 name="n_of_respuesta"
@@ -217,7 +234,7 @@ getInfoDependencias(){
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">num_guia</label>
+              <label className="form-label">Numero de Guía</label>
               <input
                 type="text"
                 name="num_guia"
@@ -294,7 +311,7 @@ getInfoDependencias(){
               />
             </div>
             <div>
-              <label className="form-label">tip_notificacion</label>
+              <label className="form-label">Tipo de Notificación</label>
               <input
                 type="text"
                 name="tip_notificacion"
@@ -304,14 +321,17 @@ getInfoDependencias(){
               />
             </div>
             <div>
-              <label className="form-label">emp_transporte</label>
-              <input
-                type="text"
+              <label className="form-label">Empresa de Transporte</label>
+              <select
                 name="emp_transporte"
-                className="form-control"
+                className="form-select"
                 onChange={this.manejarInput}
-                placeholder="no hay archivo seleccionado"
-              />
+              >
+                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
+                {this.state.EmpTransporte.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}
+                <option key="otros" value="Otros" defaultValue>Otra</option>
+                <option key="Ninguna" value="Ninguna" defaultValue>Ninguna</option>
+                </select>
             </div>
           </div>
           <div className="modal-footer">
