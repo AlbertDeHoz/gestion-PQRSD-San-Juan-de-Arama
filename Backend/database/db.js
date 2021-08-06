@@ -11,3 +11,4 @@ mongoose.connect(MONGO_URI,{
 })
 const connection = mongoose.connection;
 connection.once('open', () => console.log(`conectado a la BD: ${BD_NAME}`));
+//`mongodb+srv://userpqrsd:Password4444@cluster0.odf3a.mongodb.net/${BD_NAME}?retryWrites=true&w=majority`

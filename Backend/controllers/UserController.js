@@ -98,8 +98,8 @@ module.exports = {
         if(error) return res.status(400).send(error.details[0].message);
         
         //Validación de correo existente
-        const emailValidate = await User.findOne({email: req.body.email});
-        if(emailValidate) return res.status(400).send("Email Registrado");
+        // const emailValidate = await User.findOne({email: req.body.email});
+        // if(emailValidate) return res.status(400).send("Email Registrado");
 
         //Encriptar clave
         const salt = await bcrypt.genSalt(10);
@@ -115,6 +115,7 @@ module.exports = {
             const userSave = await user.save();
             res.json({mensaje: "Usuario registrado correctamente"})
         }catch(err){
+            console.log(err)
             res.status(400).send(err)
         }
 

@@ -25,6 +25,8 @@ import EditTipoNotificacion from '../components/tiposNotificacion/EditTipoNotifi
 import CreateTiposNotificacion from '../components/tiposNotificacion/CreateTiposNotificacion'
 import CreateEmpresaTransporte from '../components/empresasTransporte/CreateEmpresaTransporte'
 import EditEmpresaTransporte from '../components/empresasTransporte/EditEmpresaTransporte'
+import CreateEstadoPqrsd from '../components/EstadosPqrsd/CreateEstadoPqrsd'
+import EditEstadoPqrsd from '../components/EstadosPqrsd/EditEstadoPqrsd'
 
 function Aplicativo() {
   return (
@@ -59,7 +61,10 @@ function Aplicativo() {
                 <Route path="/Pqrsd/admin-empresas-transporte/edit-Empresa-Transporte/:id" component={EditEmpresaTransporte} />
                 <Route exact path="/Pqrsd/admin-empresas-transporte/new-Empresa-Transportadora" component={CreateEmpresaTransporte} />
 
-                <Route path="/Pqrsd/admin-estados-pqrsd"><AdminEstadosPQRSD/></Route>
+                <Route exact path="/Pqrsd/admin-estados-pqrsd"><AdminEstadosPQRSD/></Route>
+                <Route path="/Pqrsd/admin-estados-pqrsd/edit-Estado-Pqrsd/:id" component={EditEstadoPqrsd} />
+                <Route exact path="/Pqrsd/admin-estados-pqrsd/new-Estado-Pqrsd" component={CreateEstadoPqrsd} />
+
                 <Route path="/Pqrsd/admin-tramites"><AdminTramites/></Route>
             </Switch>
           <Footer/>

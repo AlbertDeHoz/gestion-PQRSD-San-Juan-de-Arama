@@ -1,10 +1,10 @@
-const EmpresaTransportadora = require('../models/EmpresaTransportadora')
-const {empresasTransportadorasValidacion} = require("../validate/admin.validate");
+const EstadoPqrsd = require('../models/EstadoPqrsd')
+const {estadoPqrsdValidacion} = require("../validate/admin.validate");
 
 module.exports = {
     //List
     list: async (req, res, next) => {
-        EmpresaTransportadora.find((error, data) => {
+        EstadoPqrsd.find((error, data) => {
             if (error) {
               return next(error)
             } else {
@@ -15,16 +15,16 @@ module.exports = {
     //Create
     create: async (req, res, next) => {
         //validación
-        const {error} = empresasTransportadorasValidacion(req.body);
+        const {error} = estadoPqrsdValidacion(req.body);
         if(error) return res.status(400).send(error.details[0].message);
 
         //Ingresar en la base de datos
-        const empresaTransportadora = new EmpresaTransportadora({
+        const tipoPqrsd = new EstadoPqrsd({
             name: req.body.name
         })
         // Guardar usuario
         try{
-            const empresaTransportadoraSave = await empresaTransportadora.save();
+            const tipoPqrsdSave = await tipoPqrsd.save();
             res.json({mensaje: "Tipo de Notificación creado correctamente"})
         }catch(err){
             res.status(400).send(err)
@@ -32,7 +32,7 @@ module.exports = {
     },
       // Update tipo pqrsd
     update:async (req, res, next) => {
-        EmpresaTransportadora.findByIdAndUpdate(req.params._id, {
+        EstadoPqrsd.findByIdAndUpdate(req.params._id, {
         $set: req.body
     }, (error, data) => {
       if (error) {
@@ -45,7 +45,7 @@ module.exports = {
     })
   },
    edit: async (req, res, next) => {
-    EmpresaTransportadora.findById(req.params._id, (error, data) => {
+    EstadoPqrsd.findById(req.params._id, (error, data) => {
       if (error) {
         return next(error)
       } else {
@@ -55,7 +55,7 @@ module.exports = {
   },
   //Delete
     delete: async (req, res, next) => {
-        EmpresaTransportadora.findByIdAndRemove(req.params._id, (error, data) => {
+        EstadoPqrsd.findByIdAndRemove(req.params._id, (error, data) => {
       if (error) {
         return next(error);
       } else {
