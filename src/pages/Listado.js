@@ -100,9 +100,10 @@ class Listado extends React.Component {
     // si la petición es correcta entoces que renderice la nueva pqrsd creada
     if (response.ok) {
       // TODO: la base de datos tiene que responder con la pqrsd creada
-      //const data = await response.json();
-      const pqrsdsData = this.state.pqrsdsData;
-      this.setState({ pqrsdsData: [...pqrsdsData, { ...newPqrsd }] });
+      const data = await response.json();
+      const  [...pqrsdsData ] = this.state.pqrsdsData;
+      pqrsdsData.push(data);
+      this.setState({ pqrsdsData });
     }
   }
 
@@ -119,9 +120,20 @@ class Listado extends React.Component {
   //se recibe el no_radicado de la pqrsd administrada y los campos administrados(fieldManaged) desde el componente GestionarPqrsd
   //Gracias al no_radicado se localiza la pqrsd que está siendo gestionada y se asigna a pqrsdManaged
   //Se le asignan los campos administrados a pqrsdManaged
-  updatePqrsdManaged(no_radicado,fieldManaged) {
-    const pqrsdManaged = this.state.pqrsdsData.find( pqrsd => pqrsd.no_radicado === no_radicado );
-    Object.assign(pqrsdManaged,fieldManaged);
+  async updatePqrsdManaged(_id,pqrsdManaged) {
+    const response = await fetch(
+      `http://localhost:5000/api/pqrsd/manage/${_id}`,{
+        method:'PUT',
+        headers: {
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify(pqrsdManaged)
+      })
+    if (response.ok){
+      const data = await response.json();
+      const pqrsdToUpdate = this.state.pqrsdsData.find( pqrsd => pqrsd._id === _id);
+      Object.assign(pqrsdToUpdate,data);
+    }
   }
   render() {
     let { url, path } = this.props.match;

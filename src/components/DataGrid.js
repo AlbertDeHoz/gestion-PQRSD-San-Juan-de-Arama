@@ -57,6 +57,7 @@ const DataGrid = (props) => {
           <tbody {...getTableBodyProps()}>
             {initRow.map((row, i) => {
               prepareRow(row);
+              row.values.plazo_respuesta = new Date(row.values.plazo_respuesta).toDateString();
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {

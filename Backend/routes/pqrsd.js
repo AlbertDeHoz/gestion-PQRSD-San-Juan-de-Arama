@@ -3,7 +3,7 @@ const pqrsdController = require('../controllers/pqrsdController');
 
 router.get('/:_id/pqrsds',pqrsdController.list);
 router.post('/create/:_id',pqrsdController.create);
-router.put('/update/:_id',pqrsdController.update);
+router.put('/manage/:id',pqrsdController.manage);
 router.post('/file', pqrsdController.uploadDocs);
 
 module.exports = router
