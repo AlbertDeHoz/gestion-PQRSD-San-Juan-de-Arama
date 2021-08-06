@@ -20,6 +20,8 @@ import EditTipoPqrsd from '../components/tipoPqrsd/EditTipoPqrsd';
 import CreateTipoPqrsd from '../components/tipoPqrsd/CreateTipoPqrsd';
 import EditMecanismoRecepcion from '../components/mecanismosRecepcion/EditMecanismoRecepcion'
 import CreateMecanismoRecepcion from '../components/mecanismosRecepcion/CreateMecanismoRecepcion'
+import EditDependencia from '../components/Dependencias/EditDependencia'
+import CreateDependencia from '../components/Dependencias/CreateDependencia'
 
 function Aplicativo() {
   return (
@@ -31,7 +33,9 @@ function Aplicativo() {
                 <Route exact path="/Pqrsd/userinfo"><UserInfo/></Route>
                 <Route path="/Pqrsd/Dashboard"><Dashboard/></Route>
                 <Route path="/Pqrsd/Listado"><Listado/></Route>
-                <Route path="/Pqrsd/admin-dependencias"><AdminDependencias/></Route>
+                <Route exact path="/Pqrsd/admin-dependencias"><AdminDependencias/></Route>
+                <Route path="/Pqrsd/admin-dependencias/edit-Dependencia/:id" component={EditDependencia} />
+                <Route exact path="/Pqrsd/admin-dependencias/new-Dependencia" component={CreateDependencia} />
                 <Route path="/Pqrsd/admin-usuarios"><AdminUsuarios/></Route>
                 <Route exact path="/Pqrsd/admin-tipos-PQRSD"><AdminTiposPQRSD/></Route>
                 <Route path="/Pqrsd/admin-tipos-PQRSD/edit-TipoPqrsd/:id" component={EditTipoPqrsd} />

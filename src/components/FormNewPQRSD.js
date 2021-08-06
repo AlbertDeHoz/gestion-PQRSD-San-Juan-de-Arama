@@ -18,6 +18,7 @@ export default class FormNewPQRSD extends Component {
       user: {},
       tPqrsd:[],
       mecaRecep:[],
+      Dependencias:[],
       mensaje: "",
       t_respuesta:
         time.getDate() + "/" + (time.getMonth() + 1) + "/" + time.getFullYear(), // comento esto porque en la petición no se estaba mandando este dato
@@ -56,6 +57,7 @@ export default class FormNewPQRSD extends Component {
   componentDidMount(){
     this.getInfoTiposPqrsd()
     this.getInfoMecanismosRecepcion()
+    this.getInfoDependencias()
 }
 
   manejarInput(e) {
@@ -81,13 +83,25 @@ export default class FormNewPQRSD extends Component {
     });
 }
 
-//obtener tipos de pqrsd
+//obtener Mecanismos de Recepción
 getInfoMecanismosRecepcion(){
   const token = localStorage.getItem('auth-token');
   axios.get('http://localhost:5000/api/Mecanismos-Recepcion',{
       headers: {'auth-token': token}
   }).then(response => {
       this.setState({mecaRecep: response.data})
+  }).catch(err =>{
+      this.setState({ mensaje: err.response.data})
+  });
+}
+
+//obtener Dependencias
+getInfoDependencias(){
+  const token = localStorage.getItem('auth-token');
+  axios.get('http://localhost:5000/api/Dependencias',{
+      headers: {'auth-token': token}
+  }).then(response => {
+      this.setState({Dependencias: response.data})
   }).catch(err =>{
       this.setState({ mensaje: err.response.data})
   });
@@ -164,13 +178,13 @@ getInfoMecanismosRecepcion(){
             </div>
             <div className="mb-3">
               <label className="form-label">Dependencia competente</label>
-              <input
-                type="text"
+              <select
                 name="dependencia"
-                className="form-control"
+                className="form-select"
                 onChange={this.manejarInput}
-                placeholder="Dependencia"
-              />
+              >
+                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
+                {this.state.Dependencias.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}</select>
             </div>
             <div className="mb-3">
               <label className="form-label">descripcion</label>

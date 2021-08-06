@@ -2,10 +2,10 @@ import axios from 'axios';
 import React, { Component } from 'react'
 import { Form } from 'react-bootstrap';
 
-export default class EditMecanismoRecepcion extends Component {
+export default class EditDependencia extends Component {
     constructor(props){
         super(props);
-        this.onChangeMecanismoRecepcionName = this.onChangeMecanismoRecepcionName.bind(this);
+        this.onChangeDepencencias = this.onChangeDepencencias.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
     //state
@@ -18,7 +18,7 @@ export default class EditMecanismoRecepcion extends Component {
     componentDidMount(){
         axios
         .get(
-          "http://localhost:5000/api/Mecanismos-Recepcion/edit/" +
+          "http://localhost:5000/api/Dependencias/edit/" +
             this.props.match.params.id
         )
         .then((res) => {
@@ -34,28 +34,27 @@ export default class EditMecanismoRecepcion extends Component {
     onSubmit(e){
         e.preventDefault();
         
-        const MecanismosRecepcionObjet = {
+        const DependenciasObjet = {
             name: this.state.name
         };
 
         axios.put(
-            "http://localhost:5000/api/Mecanismos-Recepcion/update/" + this.props.match.params.id, MecanismosRecepcionObjet
+            "http://localhost:5000/api/Dependencias/update/" + this.props.match.params.id, DependenciasObjet
         ).then((res) =>{
             console.log(res.data);
-            console.log("Mecanismo de Recepcion Actuaizado con éxito");
+            console.log("Dependencia Actuaizada con éxito");
         })
         .catch((error) => {
             console.log(error)
         });
 
         // redireccionando a listado de tipos de pqrsd
-        this.props.history.push("/Pqrsd/admin-mecanismos-recepcion")
+        this.props.history.push("/Pqrsd/admin-dependencias")
     }
 
-    onChangeMecanismoRecepcionName(e){
+    onChangeDepencencias(e){
         this.setState({name: e.target.value})
     }
-
     render() {
         return (
             <div>
@@ -64,14 +63,14 @@ export default class EditMecanismoRecepcion extends Component {
                             <div className="card card-body">
                                 <Form onSubmit={this.onSubmit}>
                                     <Form.Group controlId="name">
-                                        <Form.Label>Name</Form.Label>
+                                        <Form.Label>Nombre de Dependencia</Form.Label>
                                         <Form.Control
                                         type="text"
                                         value={this.state.name}
-                                        onChange={this.onChangeMecanismoRecepcionName}/>
+                                        onChange={this.onChangeDepencencias}/>
                                     </Form.Group>
 
-                                    <button className="btn btn-institucional" type="submit">Actualizar Mecanismo de Recepcion</button>
+                                    <button className="btn btn-institucional" type="submit">Actualizar dependencia</button>
                                 </Form>
                             </div>
                         </div>

@@ -1,10 +1,10 @@
-const MecanismosRecepcion = require('../models/MecanismosRecepcion')
-const {mecanismosRecepcionValidacion} = require("../validate/admin.validate");
+const Dependencia = require('../models/Dependencia')
+const {dependenciasValidacion} = require("../validate/admin.validate");
 
 module.exports = {
     //List
     list: async (req, res, next) => {
-        MecanismosRecepcion.find((error, data) => {
+        Dependencia.find((error, data) => {
             if (error) {
               return next(error)
             } else {
@@ -15,16 +15,16 @@ module.exports = {
     //Create
     create: async (req, res, next) => {
         //validación
-        const {error} = mecanismosRecepcionValidacion(req.body);
+        const {error} = dependenciasValidacion(req.body);
         if(error) return res.status(400).send(error.details[0].message);
 
         //Ingresar en la base de datos
-        const mecanismosRecepcion = new MecanismosRecepcion({
+        const dependencia = new Dependencia({
             name: req.body.name
         })
         // Guardar usuario
         try{
-            const tipoPqrsdSave = await mecanismosRecepcion.save();
+            const dependenciaSave = await dependencia.save();
             res.json({mensaje: "Mecanismo de Recepción creado correctamente"})
         }catch(err){
             res.status(400).send(err)
@@ -32,7 +32,7 @@ module.exports = {
     },
       // Update tipo pqrsd
     update:async (req, res, next) => {
-        MecanismosRecepcion.findByIdAndUpdate(req.params._id, {
+        Dependencia.findByIdAndUpdate(req.params._id, {
         $set: req.body
     }, (error, data) => {
       if (error) {
@@ -40,12 +40,12 @@ module.exports = {
         console.log(error)
       } else {
         res.json(data)
-        console.log('Tipo de Pqrsd Actualizada con éxito!')
+        console.log('Dependencia Actualizada con éxito!')
       }
     })
   },
    edit: async (req, res, next) => {
-    MecanismosRecepcion.findById(req.params._id, (error, data) => {
+    Dependencia.findById(req.params._id, (error, data) => {
       if (error) {
         return next(error)
       } else {
@@ -55,7 +55,7 @@ module.exports = {
   },
   //Delete
     delete: async (req, res, next) => {
-        MecanismosRecepcion.findByIdAndRemove(req.params._id, (error, data) => {
+        Dependencia.findByIdAndRemove(req.params._id, (error, data) => {
       if (error) {
         return next(error);
       } else {

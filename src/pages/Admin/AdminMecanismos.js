@@ -8,7 +8,7 @@ export default class AdminTiposPQRSD extends Component {
     constructor(){
         super();
         this.state = {
-            tPqrsd: [],
+            mecaRecepcion: [],
             mensaje: ''
         };
     }
@@ -22,14 +22,14 @@ export default class AdminTiposPQRSD extends Component {
         axios.get('http://localhost:5000/api/Mecanismos-Recepcion',{
             headers: {'auth-token': token}
         }).then(response => {
-            this.setState({tPqrsd: response.data})
+            this.setState({mecaRecepcion: response.data})
         }).catch(err =>{
             this.setState({ mensaje: err.response.data})
         });
     }
 
     DataTables() {
-        return this.state.tPqrsd.map((res, i) => {
+        return this.state.mecaRecepcion.map((res, i) => {
           return <TBodyMecanismosRecepcion obj={res} key={i} />;
         });
       }
@@ -44,7 +44,7 @@ export default class AdminTiposPQRSD extends Component {
                                 <div className="col-12">
                                     <div className="card">
                                         <div className="card-header">
-                                            <h3 className="card-title">Tipos de PQRSDs</h3>
+                                            <h3 className="card-title">Mecanismos de Recepción  </h3>
                                             <div className="card-tools">
                                                 <div className="h-50">
                                                     <Link to={"admin-mecanismos-recepcion/new-Mecanismo-Recepcion"} class="btn btn-block bg-institucional text-white btn-xs h-50">Nuevo Mecanismo de Recepcion</Link>
