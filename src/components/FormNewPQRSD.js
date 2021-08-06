@@ -25,11 +25,11 @@ export default class FormNewPQRSD extends Component {
       mensaje: "",
       t_respuesta:
         time.getDate() + "/" + (time.getMonth() + 1) + "/" + time.getFullYear(), // comento esto porque en la petición no se estaba mandando este dato
-      ter_respuesta: "15",
       pqrsdData: {
         no_radicado: today.getTime().toString(),
-        f_recibido: date,
+        f_recibido: new Date(),
         t_pqrsd: "",
+        dias_respuesta: null,
         plazo_respuesta: time.toDateString(),
         nombre_solicitante: "",
         entidad: "",
@@ -55,7 +55,13 @@ export default class FormNewPQRSD extends Component {
     };
     this.manejarInput = this.manejarInput.bind(this);
     this.submitFormulario = this.submitFormulario.bind(this);
-    this.getInfoTiposPqrsd = this.getInfoTiposPqrsd.bind(this)
+    this.getInfoTiposPqrsd = this.getInfoTiposPqrsd.bind(this);
+  }
+  componentDidMount() {
+    this.getInfoTiposPqrsd();
+    this.getInfoMecanismosRecepcion();
+    this.getInfoDependencias();
+    this.getInfoEmpresasTransporte();
   }
   componentDidMount(){
     this.getInfoTiposPqrsd()
@@ -68,7 +74,13 @@ export default class FormNewPQRSD extends Component {
 
   manejarInput(e) {
     const { name, value } = e.target;
-    const { ...pqrsd } = this.state.pqrsdData;
+    const {...pqrsd} = this.state.pqrsdData;
+    if (name === "t_pqrsd") {
+      const { n_dias } = value
+        ? this.state.tPqrsd.find((data) => data.name === value)
+        : "";
+      Object.assign(pqrsd, { dias_respuesta: n_dias });
+    }
     this.setState({
       pqrsdData: {
         ...pqrsd,
@@ -78,52 +90,64 @@ export default class FormNewPQRSD extends Component {
   }
 
   //obtener tipos de pqrsd
-  getInfoTiposPqrsd(){
-    const token = localStorage.getItem('auth-token');
-    axios.get('http://localhost:5000/api/Tipospqrsd',{
-        headers: {'auth-token': token}
-    }).then(response => {
-        this.setState({tPqrsd: response.data})
-    }).catch(err =>{
-        this.setState({ mensaje: err.response.data})
-    });
-}
+  getInfoTiposPqrsd() {
+    const token = localStorage.getItem("auth-token");
+    axios
+      .get("http://localhost:5000/api/Tipospqrsd", {
+        headers: { "auth-token": token },
+      })
+      .then((response) => {
+        this.setState({ tPqrsd: response.data });
+      })
+      .catch((err) => {
+        this.setState({ mensaje: err.response.data });
+      });
+  }
 
-//obtener Mecanismos de Recepción
-getInfoMecanismosRecepcion(){
-  const token = localStorage.getItem('auth-token');
-  axios.get('http://localhost:5000/api/Mecanismos-Recepcion',{
-      headers: {'auth-token': token}
-  }).then(response => {
-      this.setState({mecaRecep: response.data})
-  }).catch(err =>{
-      this.setState({ mensaje: err.response.data})
-  });
-}
+  //obtener Mecanismos de Recepción
+  getInfoMecanismosRecepcion() {
+    const token = localStorage.getItem("auth-token");
+    axios
+      .get("http://localhost:5000/api/Mecanismos-Recepcion", {
+        headers: { "auth-token": token },
+      })
+      .then((response) => {
+        this.setState({ mecaRecep: response.data });
+      })
+      .catch((err) => {
+        this.setState({ mensaje: err.response.data });
+      });
+  }
 
-//obtener Dependencias
-getInfoDependencias(){
-  const token = localStorage.getItem('auth-token');
-  axios.get('http://localhost:5000/api/Dependencias',{
-      headers: {'auth-token': token}
-  }).then(response => {
-      this.setState({Dependencias: response.data})
-  }).catch(err =>{
-      this.setState({ mensaje: err.response.data})
-  });
-}
+  //obtener Dependencias
+  getInfoDependencias() {
+    const token = localStorage.getItem("auth-token");
+    axios
+      .get("http://localhost:5000/api/Dependencias", {
+        headers: { "auth-token": token },
+      })
+      .then((response) => {
+        this.setState({ Dependencias: response.data });
+      })
+      .catch((err) => {
+        this.setState({ mensaje: err.response.data });
+      });
+  }
 
-//obtener Empresas Transportadoras
-getInfoEmpresasTransporte(){
-  const token = localStorage.getItem('auth-token');
-  axios.get('http://localhost:5000/api/Empresas-Transportadoras',{
-      headers: {'auth-token': token}
-  }).then(response => {
-      this.setState({EmpTransporte: response.data})
-  }).catch(err =>{
-      this.setState({ mensaje: err.response.data})
-  });
-}
+  //obtener Empresas Transportadoras
+  getInfoEmpresasTransporte() {
+    const token = localStorage.getItem("auth-token");
+    axios
+      .get("http://localhost:5000/api/Empresas-Transportadoras", {
+        headers: { "auth-token": token },
+      })
+      .then((response) => {
+        this.setState({ EmpTransporte: response.data });
+      })
+      .catch((err) => {
+        this.setState({ mensaje: err.response.data });
+      });
+  }
 
 //obtener Estados de Pqrsd
 getInfoEstadosPqrsd(){
@@ -150,9 +174,14 @@ getInfoTramites(){
 }
 
   validateForm() {
-    console.log(this.state.tPqrsd)
+    console.log(this.state.tPqrsd);
     const pqrsdData = this.state.pqrsdData;
-    const fieldsNotEmpty = ["nombre_solicitante", "entidad", "direccion", "t_pqrsd"];
+    const fieldsNotEmpty = [
+      "nombre_solicitante",
+      "entidad",
+      "direccion",
+      "t_pqrsd",
+    ];
     const filterEmpty = fieldsNotEmpty.filter(
       (key) => pqrsdData[key].length === 0
     );
@@ -162,7 +191,7 @@ getInfoTramites(){
       this.setState({ mensaje });
       return false;
     }
-    this.setState({mensaje:''});
+    this.setState({ mensaje: "" });
     return true;
   }
 
@@ -182,7 +211,7 @@ getInfoTramites(){
       <div className="container">
         {/* <p  className="text-center">Solicitud N°{this.state.pqrsdData.no_radicado}</p> */}
         <p className="text-center">Solicitud N°{this.props.no_radicado}</p>
-        { mensajeError.length !== 0 && <AlertError mensaje={mensajeError   } />}
+        {mensajeError.length !== 0 && <AlertError mensaje={mensajeError} />}
         <form
           onSubmit={this.submitFormulario}
           className="row align-items-start"
@@ -225,11 +254,18 @@ getInfoTramites(){
                 className="form-select"
                 onChange={this.manejarInput}
               >
-                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
-                {this.state.Dependencias.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}
-                <option key="otros" value="Otros" defaultValue>Otros</option>
-                </select>
-                
+                <option key="0" value="Seleccione uno" defaultValue>
+                  Seleccione una opción
+                </option>
+                {this.state.Dependencias.map((res) => (
+                  <option key={res.name} value={res.name}>
+                    {res.name}
+                  </option>
+                ))}
+                <option key="otros" value="Otros" defaultValue>
+                  Otros
+                </option>
+              </select>
             </div>
             <div className="mb-3">
               <label className="form-label">Descripcion</label>
@@ -253,17 +289,8 @@ getInfoTramites(){
                 <option key="Ninguno" value="Ninguno" defaultValue>Ninguno</option>
                 </select>
             </div>
-            <div className="mb-3">
-              <label className="form-label">Numero de Oficio de Respuesta</label>
-              <input
-                type="text"
-                name="n_of_respuesta"
-                className="form-control"
-                onChange={this.manejarInput}
-                placeholder="Dependencia"
-              />
-            </div>
-            <div className="mb-3">
+ 
+            {/* <div className="mb-3">
               <label className="form-label">Numero de Guía</label>
               <input
                 type="text"
@@ -272,19 +299,28 @@ getInfoTramites(){
                 onChange={this.manejarInput}
                 placeholder="Dependencia"
               />
-            </div>
+            </div> */}
             <div>
               {/* Campos automáticos */}
               <div className="form-text">
-                Fecha de creación: {this.state.f_recibido}
+                Fecha de creación:{" "}
+                {this.state.pqrsdData.f_recibido.toLocaleDateString(
+                  "zh-Hans-CN"
+                )}
               </div>
-              <div className="form-text">
-                Término para dar Respuesta: {this.state.ter_respuesta} días
-                habiles
-              </div>
-              <div className="form-text">
-                Fecha de posible respuesta: {this.state.t_respuesta}{" "}
-              </div>
+              {
+                //Esta sección sólo se visualiza si hay días de respuesta para la pqrsd
+                !!this.state.pqrsdData.dias_respuesta &&
+                <section>
+                  <div className="form-text">
+                    Término para dar Respuesta:{" "}
+                    {this.state.pqrsdData.dias_respuesta} días hábiles
+                  </div>
+                  <div className="form-text">
+                    Fecha de posible respuesta: {this.state.t_respuesta}{" "}
+                  </div>
+                </section>
+              }
             </div>
           </div>
           <div className="col">
@@ -305,8 +341,15 @@ getInfoTramites(){
                 className="form-select"
                 onChange={this.manejarInput}
               >
-                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
-                {this.state.tPqrsd.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}</select>
+                <option key="0" value="" defaultValue>
+                  Seleccione una opción
+                </option>
+                {this.state.tPqrsd.map((res) => (
+                  <option key={res.name} value={res.name}>
+                    {res.name}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="mb-3">
               <label className="form-label">Mecanismo de Recepción</label>
@@ -315,8 +358,15 @@ getInfoTramites(){
                 className="form-select"
                 onChange={this.manejarInput}
               >
-                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
-                {this.state.mecaRecep.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}</select>
+                <option key="0" value="Seleccione uno" defaultValue>
+                  Seleccione una opción
+                </option>
+                {this.state.mecaRecep.map((res) => (
+                  <option key={res.name} value={res.name}>
+                    {res.name}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="mb-3">
               <label className="form-label">Entidad</label>
@@ -380,7 +430,7 @@ getInfoTramites(){
               type="button"
               className="btn btn-orange-institucional text-white btn-xs"
               data-bs-dismiss="modal"
-              onClick={ () => this.setState({mensaje:''})}
+              onClick={() => this.setState({ mensaje: "" })}
             >
               Cancelar
             </button>

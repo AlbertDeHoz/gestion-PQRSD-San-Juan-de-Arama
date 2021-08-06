@@ -13,7 +13,7 @@ const pqrsdSchema = new Schema(
         t_pqrsd:{
             type: String,
         },
-        t_respuesta:{
+        dias_respuesta:{
             type: Number,
         },
         plazo_respuesta:{

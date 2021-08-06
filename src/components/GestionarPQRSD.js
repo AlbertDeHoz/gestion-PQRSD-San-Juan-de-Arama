@@ -47,9 +47,7 @@ class GestionarPQRSD extends React.Component {
   render() {
     const data = {
       fecha_creación: new Date().toLocaleDateString(),
-      id_radicado: "20211307001",
       posible_respuesta: new Date().toLocaleDateString(),
-      termino_respuesta: "15",
     };
     const { pqrsdToManage } = this.props;
     return (
@@ -107,11 +105,11 @@ class GestionarPQRSD extends React.Component {
               {/* Campos automáticos */}
               <div className="form-text">
                 Fecha de creación:{" "}
-                {new Date(pqrsdToManage.f_recibido).toLocaleDateString()}
+                {new Date(pqrsdToManage.f_recibido).toLocaleDateString('zh-Hans-CN')}
               </div>
               <div className="form-text">
-                Término para dar Respuesta: {data.termino_respuesta} días
-                habiles
+                Término para dar Respuesta: {pqrsdToManage.dias_respuesta} días
+                hábiles
               </div>
               <div className="form-text">
                 Fecha de posible respuesta: {data.posible_respuesta}{" "}
