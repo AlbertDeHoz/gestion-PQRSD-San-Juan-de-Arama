@@ -50,26 +50,17 @@ export default class FormNewPQRSD extends Component {
         observaciones: "",
         aux_responsable: "",
         doc_respuesta: "url",
-        status: "",
+        status: "En tramite",
       },
     };
     this.manejarInput = this.manejarInput.bind(this);
     this.submitFormulario = this.submitFormulario.bind(this);
     this.getInfoTiposPqrsd = this.getInfoTiposPqrsd.bind(this);
   }
-  componentDidMount() {
-    this.getInfoTiposPqrsd();
-    this.getInfoMecanismosRecepcion();
-    this.getInfoDependencias();
-    this.getInfoEmpresasTransporte();
-  }
   componentDidMount(){
     this.getInfoTiposPqrsd()
     this.getInfoMecanismosRecepcion()
     this.getInfoDependencias()
-    this.getInfoEmpresasTransporte()
-    this.getInfoEstadosPqrsd()
-    this.getInfoTramites()
 }
 
   manejarInput(e) {
@@ -78,7 +69,7 @@ export default class FormNewPQRSD extends Component {
     if (name === "t_pqrsd") {
       const { n_dias } = value
         ? this.state.tPqrsd.find((data) => data.name === value)
-        : "";
+        : null;
       Object.assign(pqrsd, { dias_respuesta: n_dias });
     }
     this.setState({
@@ -133,33 +124,6 @@ export default class FormNewPQRSD extends Component {
         this.setState({ mensaje: err.response.data });
       });
   }
-
-  //obtener Empresas Transportadoras
-  getInfoEmpresasTransporte() {
-    const token = localStorage.getItem("auth-token");
-    axios
-      .get("http://localhost:5000/api/Empresas-Transportadoras", {
-        headers: { "auth-token": token },
-      })
-      .then((response) => {
-        this.setState({ EmpTransporte: response.data });
-      })
-      .catch((err) => {
-        this.setState({ mensaje: err.response.data });
-      });
-  }
-
-//obtener Estados de Pqrsd
-getInfoEstadosPqrsd(){
-  const token = localStorage.getItem('auth-token');
-  axios.get('http://localhost:5000/api/Estados-Pqrsd',{
-      headers: {'auth-token': token}
-  }).then(response => {
-      this.setState({EstadosPqrsd: response.data})
-  }).catch(err =>{
-      this.setState({ mensaje: err.response.data})
-  });
-}
 
 //obtener Tramites
 getInfoTramites(){
@@ -289,17 +253,7 @@ getInfoTramites(){
                 <option key="Ninguno" value="Ninguno" defaultValue>Ninguno</option>
                 </select>
             </div>
- 
-            {/* <div className="mb-3">
-              <label className="form-label">Numero de Guía</label>
-              <input
-                type="text"
-                name="num_guia"
-                className="form-control"
-                onChange={this.manejarInput}
-                placeholder="Dependencia"
-              />
-            </div> */}
+
             <div>
               {/* Campos automáticos */}
               <div className="form-text">
@@ -400,30 +354,8 @@ getInfoTramites(){
                 placeholder="no hay archivo seleccionado"
               />
             </div>
-            <div className="mb-3">
-              <label className="form-label">Empresa de Transporte</label>
-              <select
-                name="emp_transporte"
-                className="form-select"
-                onChange={this.manejarInput}
-              >
-                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
-                {this.state.EmpTransporte.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}
-                <option key="otros" value="Otros" defaultValue>Otra</option>
-                <option key="Ninguna" value="Ninguna" defaultValue>Ninguna</option>
-                </select>
-            </div>
-            <div>
-              <label className="form-label">Estado de la Solicitud</label>
-              <select
-                name="status"
-                className="form-select"
-                onChange={this.manejarInput}
-              >
-                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
-                {this.state.EstadosPqrsd.map(res => <option key={res.name} value={res.name}>{res.name}</option>)}
-                </select>
-            </div>
+
+
           </div>
           <div className="modal-footer">
             <button

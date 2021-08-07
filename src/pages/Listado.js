@@ -75,7 +75,6 @@ class Listado extends React.Component {
       })
       .then((response) => {
         this.setState({ pqrsdsData: response.data.pqrsds });
-        console.log(response.data.pqrsds);
       })
       .catch((err) => {
         this.setState({ mensaje: err.response.data });
@@ -113,7 +112,6 @@ class Listado extends React.Component {
     const pqrsdToManag = pqrsdsData.find(
       (data) => data.no_radicado === no_radicado
     );
-    console.log(pqrsdToManag);
     this.setState({ pqrsdToManage: pqrsdToManag });
   }
 
