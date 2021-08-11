@@ -39,7 +39,7 @@ export default class EditEstadosPqrsd extends Component {
         };
 
         axios.put(
-            "http://localhost:5000/api/Empresas-Transportadoras/update/" + this.props.match.params.id, estadosPqrsdObjet
+            "http://localhost:5000/api/Estados-Pqrsd/update/" + this.props.match.params.id, estadosPqrsdObjet
         ).then((res) =>{
             console.log(res.data);
             console.log("Empresa de Transporte Actuaizado con éxito");
@@ -49,7 +49,7 @@ export default class EditEstadosPqrsd extends Component {
         });
 
         // redireccionando a listado de tipos de pqrsd
-        this.props.history.push("/Pqrsd/admin-empresas-transporte")
+        this.props.history.push("/Pqrsd/admin-estados-pqrsd")
     }
 
     onChangeEstadosPqrsd(e){

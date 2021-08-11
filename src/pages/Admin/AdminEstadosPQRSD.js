@@ -46,7 +46,7 @@ export default class AdminEstadosPQRSD extends Component {
                                             <h3 className="card-title">Estados de Pqrsd</h3>
                                             <div className="card-tools">
                                                 <div className="h-50">
-                                                    <Link to={"admin-estados-pqrsd/new-Estado-Pqrsd"} class="btn btn-block bg-institucional text-white btn-xs h-50">Nueva empresa transportadora</Link>
+                                                    <Link to={"admin-estados-pqrsd/new-Estado-Pqrsd"} class="btn btn-block bg-institucional text-white btn-xs h-50">Nuevo estado de PQRSD</Link>
                                                 </div>
                                             </div>
                                         </div>
