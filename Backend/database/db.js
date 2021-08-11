@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const BD_NAME = 'pqrsdsanjuan'
 const MONGO_URI = process.env.MONGODB_URI
-                 ? process.env.MONGODB_URI:`mongodb://localhost/${BD_NAME}`;
+                 ? process.env.MONGODB_URI:`mongodb+srv://userpqrsd:Password4444@cluster0.odf3a.mongodb.net/${BD_NAME}?retryWrites=true&w=majority`;
 
 mongoose.connect(MONGO_URI,{
     useNewUrlParser: true,
