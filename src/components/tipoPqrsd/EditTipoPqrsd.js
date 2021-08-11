@@ -21,7 +21,7 @@ export default class EditTipoPqrsd extends Component {
     componentDidMount(){
         axios
         .get(
-          "http://localhost:5000/api/Tipospqrsd/edit/" +
+            `${process.env.REACT_APP_HOST_API}/api/Tipospqrsd/edit/` +
             this.props.match.params.id
         )
         .then((res) => {

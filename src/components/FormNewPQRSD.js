@@ -85,7 +85,7 @@ export default class FormNewPQRSD extends Component {
   getInfoTiposPqrsd() {
     const token = localStorage.getItem("auth-token");
     axios
-      .get("http://localhost:5000/api/Tipospqrsd", {
+      .get(`${process.env.REACT_APP_HOST_API}/api/Tipospqrsd`, {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -100,7 +100,7 @@ export default class FormNewPQRSD extends Component {
   getInfoMecanismosRecepcion() {
     const token = localStorage.getItem("auth-token");
     axios
-      .get("http://localhost:5000/api/Mecanismos-Recepcion", {
+      .get(`${process.env.REACT_APP_HOST_API}/api/Mecanismos-Recepcion`, {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -115,7 +115,7 @@ export default class FormNewPQRSD extends Component {
   getInfoDependencias() {
     const token = localStorage.getItem("auth-token");
     axios
-      .get("http://localhost:5000/api/Dependencias", {
+      .get(`${process.env.REACT_APP_HOST_API}/api/Dependencias`, {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -129,7 +129,7 @@ export default class FormNewPQRSD extends Component {
 //obtener Tramites
 getInfoTramites(){
   const token = localStorage.getItem('auth-token');
-  axios.get('http://localhost:5000/api/Tramites',{
+  axios.get(`${process.env.REACT_APP_HOST_API}/api/Tramites`,{
       headers: {'auth-token': token}
   }).then(response => {
       this.setState({Tramites: response.data})

@@ -12,7 +12,7 @@ export default class TipoPqrsdTableRow extends Component {
 
   deleteTramite() {
     axios.delete(
-        'http://localhost:5000/api/Tramites/delete/' + this.props.obj._id
+        `${process.env.REACT_APP_HOST_API}/api/Tramites/delete/` + this.props.obj._id
       )
       .then((res) => {
         console.log("Tramite borrado con exito");

@@ -32,7 +32,7 @@ export default class CreateDependencia extends Component {
             name: this.state.name,
         };
         axios
-          .post("http://localhost:5000/api/Dependencias/create", dependenciaObjet, {headers: headers})
+          .post(`${process.env.REACT_APP_HOST_API}/api/Dependencias/create`, dependenciaObjet, {headers: headers})
           .then((res) => console.log(res.data)).catch((error) => {
             console.log(error)
         });

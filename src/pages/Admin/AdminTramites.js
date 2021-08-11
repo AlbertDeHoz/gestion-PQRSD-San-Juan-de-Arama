@@ -19,7 +19,7 @@ export default class AdminTramites extends Component {
 
     getInfo(){
         const token = localStorage.getItem('auth-token');
-        axios.get('http://localhost:5000/api/Tramites',{
+        axios.get(`${process.env.REACT_APP_HOST_API}/api/Tramites`,{
             headers: {'auth-token': token}
         }).then(response => {
             this.setState({tramites: response.data})

@@ -18,7 +18,7 @@ export default class AdminEmpresasTransportadoras extends Component {
 
     getInfo(){
         const token = localStorage.getItem('auth-token');
-        axios.get('http://localhost:5000/api/Empresas-Transportadoras',{
+        axios.get(`${process.env.REACT_APP_HOST_API}/api/Empresas-Transportadoras`,{
             headers: {'auth-token': token}
         }).then(response => {
             this.setState({EmpresasTransportadoras: response.data})

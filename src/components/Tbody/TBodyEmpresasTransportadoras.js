@@ -11,7 +11,7 @@ export default class empresasTransportadorasTableRow extends Component {
 
   deleteEmpresasTransportadoras() {
     axios.delete(
-        'http://localhost:5000/api/Empresas-Transportadoras/delete/' + this.props.obj._id
+        `${process.env.REACT_APP_HOST_API}/api/Empresas-Transportadoras/delete/` + this.props.obj._id
       )
       .then((res) => {
         console.log("Empresa de Transporte borrada con exito");

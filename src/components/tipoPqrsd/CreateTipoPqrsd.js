@@ -39,7 +39,7 @@ export default class CreateTipoPqrsd extends Component {
             n_dias: this.state.n_dias,
         };
         axios
-          .post("http://localhost:5000/api/Tipospqrsd/create", tipoPqrsdObjet, {headers: headers})
+          .post(`${process.env.REACT_APP_HOST_API}/api/Tipospqrsd/create`, tipoPqrsdObjet, {headers: headers})
           .then((res) => console.log(res.data)).catch((error) => {
             console.log(error)
         });

@@ -24,7 +24,7 @@ export default class UserInfo extends Component {
 
     getInfo(){
         const token = localStorage.getItem('auth-token');
-        axios.get('http://localhost:5000/api/user/userinfo',{
+        axios.get(`${process.env.REACT_APP_HOST_API}/api/user/userinfo`,{
             headers: {'auth-token': token}
         }).then(response => {
             this.setState({user: response.data})
@@ -49,7 +49,7 @@ export default class UserInfo extends Component {
         var headers = {
             'auth-token': token
         }
-        axios.post(`http://localhost:5000/api/user/update/${this.state.user._id}`, postData, {
+        axios.post(`${process.env.REACT_APP_HOST_API}/api/user/update/${this.state.user._id}`, postData, {
             headers: headers
         }).then(response =>{
             this.setState({mensaje: response.data.mensaje});
@@ -73,7 +73,7 @@ export default class UserInfo extends Component {
                 'auth-token': token
             }
         }
-        axios.post('http://localhost:5000/api/user/upload',formData, config).then(response =>{
+        axios.post(`${process.env.REACT_APP_HOST_API}/api/user/upload`,formData, config).then(response =>{
             this.setState({mensaje: response.data.mensaje});
             this.getInfo();
         }).catch(err =>{

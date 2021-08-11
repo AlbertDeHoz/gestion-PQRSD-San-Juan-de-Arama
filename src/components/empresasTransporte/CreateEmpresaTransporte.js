@@ -32,7 +32,7 @@ export default class CreateEmpresaTransporte extends Component {
             name: this.state.name,
         };
         axios
-          .post("http://localhost:5000/api/Empresas-Transportadoras/create", empresaTransporteObjet, {headers: headers})
+          .post(`${process.env.REACT_APP_HOST_API}/api/Empresas-Transportadoras/create`, empresaTransporteObjet, {headers: headers})
           .then((res) => console.log(res.data)).catch((error) => {
             console.log(error)
         });

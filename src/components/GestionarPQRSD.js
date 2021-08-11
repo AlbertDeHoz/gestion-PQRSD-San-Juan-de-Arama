@@ -77,7 +77,7 @@ class GestionarPQRSD extends React.Component {
   getInfoEmpresasTransporte() {
     const token = localStorage.getItem("auth-token");
     axios
-      .get("http://localhost:5000/api/Empresas-Transportadoras", {
+      .get(`${process.env.REACT_APP_HOST_API}/api/Empresas-Transportadoras`, {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -92,7 +92,7 @@ class GestionarPQRSD extends React.Component {
   getInfoEstadosPqrsd() {
     const token = localStorage.getItem("auth-token");
     axios
-      .get("http://localhost:5000/api/Estados-Pqrsd", {
+      .get(`${process.env.REACT_APP_HOST_API}/api/Estados-Pqrsd`, {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -107,7 +107,7 @@ class GestionarPQRSD extends React.Component {
   async getInfoTiposNotificacion() {
     const token = localStorage.getItem("auth-token");
     const response = await fetch(
-      "http://localhost:5000/api//Tipos-Notificacion",
+      `${process.env.REACT_APP_HOST_API}/api//Tipos-Notificacion`,
       {
         method: "GET",
         headers: { "auth-token": token },

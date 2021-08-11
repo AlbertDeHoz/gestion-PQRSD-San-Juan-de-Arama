@@ -18,7 +18,7 @@ export default class EditDependencia extends Component {
     componentDidMount(){
         axios
         .get(
-          "http://localhost:5000/api/Dependencias/edit/" +
+            `${process.env.REACT_APP_HOST_API}/api/Dependencias/edit/` +
             this.props.match.params.id
         )
         .then((res) => {
@@ -39,7 +39,7 @@ export default class EditDependencia extends Component {
         };
 
         axios.put(
-            "http://localhost:5000/api/Dependencias/update/" + this.props.match.params.id, DependenciasObjet
+            `${process.env.REACT_APP_HOST_API}/api/Dependencias/update/` + this.props.match.params.id, DependenciasObjet
         ).then((res) =>{
             console.log(res.data);
             console.log("Dependencia Actuaizada con éxito");

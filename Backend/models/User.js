@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
+require('dotenv').config();
 
 let userSchema = new Schema(
   {
@@ -20,7 +21,7 @@ let userSchema = new Schema(
     },
     avatar:{
         type: String,
-        default: 'http://localhost:5000/uploads/userDef.png'
+        default: `${process.env.REACT_APP_HOST_API}/uploads/userDef.png`
     },
     password:{
       type: String,

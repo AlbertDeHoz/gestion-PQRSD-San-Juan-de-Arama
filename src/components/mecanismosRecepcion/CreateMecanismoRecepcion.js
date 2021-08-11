@@ -32,7 +32,7 @@ export default class CreateMecanismosRecepcion extends Component {
             name: this.state.name,
         };
         axios
-          .post("http://localhost:5000/api/Mecanismos-Recepcion/create", mecanismosRecepcionObjet, {headers: headers})
+          .post(`${process.env.REACT_APP_HOST_API}/api/Mecanismos-Recepcion/create`, mecanismosRecepcionObjet, {headers: headers})
           .then((res) => console.log(res.data)).catch((error) => {
             console.log(error)
         });

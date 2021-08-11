@@ -18,7 +18,7 @@ export default class AdminTiposNotificacion extends Component {
 
     getInfo(){
         const token = localStorage.getItem('auth-token');
-        axios.get('http://localhost:5000/api/Tipos-Notificacion',{
+        axios.get(`${process.env.REACT_APP_HOST_API}/api/Tipos-Notificacion`,{
             headers: {'auth-token': token}
         }).then(response => {
             this.setState({TiposNotificacion: response.data})

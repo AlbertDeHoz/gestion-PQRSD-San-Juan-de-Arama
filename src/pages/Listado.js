@@ -53,7 +53,7 @@ class Listado extends React.Component {
     const token = localStorage.getItem("auth-token");
 
     axios
-      .get("http://localhost:5000/api/user/userinfo", {
+      .get(`${process.env.REACT_APP_HOST_API}/api/user/userinfo`, {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -70,7 +70,7 @@ class Listado extends React.Component {
     //console.log(e)
     const token = localStorage.getItem("auth-token");
     axios
-      .get(`http://localhost:5000/api/pqrsd/${e}/pqrsds`, {
+      .get(`${process.env.REACT_APP_HOST_API}/api/pqrsd/${e}/pqrsds`, {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -86,7 +86,7 @@ class Listado extends React.Component {
     // Petición a la base de datos
     const token = localStorage.getItem("auth-token");
     const response = await fetch(
-      `http://localhost:5000/api/pqrsd/create/${this.state.user._id}`,
+      `${process.env.REACT_APP_HOST_API}/api/pqrsd/create/${this.state.user._id}`,
       {
         method: "POST",
         headers: {
@@ -120,7 +120,7 @@ class Listado extends React.Component {
   //Se le asignan los campos administrados a pqrsdManaged
   async updatePqrsdManaged(_id,pqrsdManaged) {
     const response = await fetch(
-      `http://localhost:5000/api/pqrsd/manage/${_id}`,{
+      `${process.env.REACT_APP_HOST_API}/api/pqrsd/manage/${_id}`,{
         method:'PUT',
         headers: {
           'Content-Type':'application/json'

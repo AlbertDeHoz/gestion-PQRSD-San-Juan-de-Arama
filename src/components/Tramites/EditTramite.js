@@ -20,7 +20,7 @@ export default class EditTramite extends Component {
     componentDidMount(){
         axios
         .get(
-          "http://localhost:5000/api/Tramites/edit/" +
+            `${process.env.REACT_APP_HOST_API}/api/Tramites/edit/` +
             this.props.match.params.id
         )
         .then((res) => {
@@ -43,7 +43,7 @@ export default class EditTramite extends Component {
         };
 
         axios.put(
-            "http://localhost:5000/api/Tramites/update/" + this.props.match.params.id, tramiteObjet
+            `${process.env.REACT_APP_HOST_API}/api/Tramites/update/` + this.props.match.params.id, tramiteObjet
         ).then((res) =>{
             console.log(res.data);
             console.log("Tramite Actuaizado con éxito");

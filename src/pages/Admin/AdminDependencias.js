@@ -19,7 +19,7 @@ export default class AdminDependencias extends Component {
 
     getInfo(){
         const token = localStorage.getItem('auth-token');
-        axios.get('http://localhost:5000/api/Dependencias',{
+        axios.get(`${process.env.REACT_APP_HOST_API}/api/Dependencias`,{
             headers: {'auth-token': token}
         }).then(response => {
             this.setState({Dependencia: response.data})

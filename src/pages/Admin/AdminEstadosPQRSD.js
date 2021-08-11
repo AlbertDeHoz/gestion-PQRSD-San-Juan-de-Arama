@@ -18,7 +18,7 @@ export default class AdminEstadosPQRSD extends Component {
 
     getInfo(){
         const token = localStorage.getItem('auth-token');
-        axios.get('http://localhost:5000/api/Estados-Pqrsd',{
+        axios.get(`${process.env.REACT_APP_HOST_API}/api/Estados-Pqrsd`,{
             headers: {'auth-token': token}
         }).then(response => {
             this.setState({EstdosPqrsd: response.data})

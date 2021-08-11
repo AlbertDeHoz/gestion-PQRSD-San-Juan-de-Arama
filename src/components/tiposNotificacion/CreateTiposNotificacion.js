@@ -32,7 +32,7 @@ export default class CreateTiposNotificacion extends Component {
             name: this.state.name,
         };
         axios
-          .post("http://localhost:5000/api/Tipos-Notificacion/create", tipoNotificacionObjet, {headers: headers})
+          .post(`${process.env.REACT_APP_HOST_API}/api/Tipos-Notificacion/create`, tipoNotificacionObjet, {headers: headers})
           .then((res) => console.log(res.data)).catch((error) => {
             console.log(error)
         });

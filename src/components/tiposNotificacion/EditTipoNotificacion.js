@@ -18,7 +18,7 @@ export default class EditTipoNotificacion extends Component {
     componentDidMount(){
         axios
         .get(
-          "http://localhost:5000/api/Tipos-Notificacion/edit/" +
+            `${process.env.REACT_APP_HOST_API}/Tipos-Notificacion/edit/` +
             this.props.match.params.id
         )
         .then((res) => {

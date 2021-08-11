@@ -26,7 +26,7 @@ export default class index extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        axios.post('http://localhost:5000/api/user/login', postData, {
+        axios.post(`${process.env.REACT_APP_HOST_API}/api/user/login`, postData, {
 
         }).then(response =>{
             localStorage.setItem('auth-token', response.data.token);

@@ -21,7 +21,7 @@ export default class AdminUsuarios extends Component {
 
     getInfo(){
         const token = localStorage.getItem('auth-token');
-        axios.get('http://localhost:5000/api/user',{
+        axios.get(`${process.env.REACT_APP_HOST_API}/api/user`,{
             headers: {'auth-token': token}
         }).then(response => {
             this.setState({user: response.data})

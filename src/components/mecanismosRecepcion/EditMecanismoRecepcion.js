@@ -18,7 +18,7 @@ export default class EditMecanismoRecepcion extends Component {
     componentDidMount(){
         axios
         .get(
-          "http://localhost:5000/api/Mecanismos-Recepcion/edit/" +
+            `${process.env.REACT_APP_HOST_API}/api/Mecanismos-Recepcion/edit/` +
             this.props.match.params.id
         )
         .then((res) => {
@@ -39,7 +39,7 @@ export default class EditMecanismoRecepcion extends Component {
         };
 
         axios.put(
-            "http://localhost:5000/api/Mecanismos-Recepcion/update/" + this.props.match.params.id, MecanismosRecepcionObjet
+            `${process.env.REACT_APP_HOST_API}/api/Mecanismos-Recepcion/update/` + this.props.match.params.id, MecanismosRecepcionObjet
         ).then((res) =>{
             console.log(res.data);
             console.log("Mecanismo de Recepcion Actuaizado con éxito");

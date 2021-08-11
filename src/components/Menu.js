@@ -26,7 +26,7 @@ export default class UserInfo extends Component {
 
   getInfo(){
       const token = localStorage.getItem('auth-token');
-      axios.get('http://localhost:5000/api/user/userinfo',{
+      axios.get(`${process.env.REACT_APP_HOST_API}/api/user/userinfo`,{
           headers: {'auth-token': token}
       }).then(response => {
           this.setState({user: response.data})

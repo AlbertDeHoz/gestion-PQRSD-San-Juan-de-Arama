@@ -14,7 +14,7 @@ export default class UserTableRow extends Component {
   deleteUser() {
     const token = localStorage.getItem('auth-token');
     axios.delete(
-        'http://localhost:5000/api/user/delete/' + this.props.obj._id, {
+      `${process.env.REACT_APP_HOST_API}/api/user/delete/` + this.props.obj._id, {
           headers: {'auth-token': token}
       })
       .then((res) => {

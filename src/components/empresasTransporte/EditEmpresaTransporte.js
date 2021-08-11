@@ -18,7 +18,7 @@ export default class EditEmpresaTransporte extends Component {
     componentDidMount(){
         axios
         .get(
-          "http://localhost:5000/api/Empresas-Transportadoras/edit/" +
+            `${process.env.REACT_APP_HOST_API}/api/Empresas-Transportadoras/edit/` +
             this.props.match.params.id
         )
         .then((res) => {
@@ -39,7 +39,7 @@ export default class EditEmpresaTransporte extends Component {
         };
 
         axios.put(
-            "http://localhost:5000/api/Empresas-Transportadoras/update/" + this.props.match.params.id, empresaTransporteObjet
+            `${process.env.REACT_APP_HOST_API}/api/Empresas-Transportadoras/update/` + this.props.match.params.id, empresaTransporteObjet
         ).then((res) =>{
             console.log(res.data);
             console.log("Empresa de Transporte Actuaizado con éxito");

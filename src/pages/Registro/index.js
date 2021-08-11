@@ -27,7 +27,7 @@ export default class index extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        axios.post('http://localhost:5000/api/user/register', postData, {
+        axios.post(`${process.env.REACT_APP_HOST_API}/api/user/register`, postData, {
 
         }).then(response =>{
             this.setState({mensaje: response.data.mensaje});

@@ -11,7 +11,7 @@ export default class DependenciasTableRow extends Component {
 
   deleteDependencias() {
     axios.delete(
-        'http://localhost:5000/api/Dependencia/delete/' + this.props.obj._id
+        `${process.env.REACT_APP_HOST_API}/api/Dependencia/delete/` + this.props.obj._id
       )
       .then((res) => {
         console.log("Dependencia borrada con exito");

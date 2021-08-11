@@ -19,7 +19,7 @@ export default class AdminTiposPQRSD extends Component {
   getInfo() {
     const token = localStorage.getItem("auth-token");
     axios
-      .get("http://localhost:5000/api/Mecanismos-Recepcion", {
+      .get(`${process.env.REACT_APP_HOST_API}/api/Mecanismos-Recepcion`, {
         headers: { "auth-token": token },
       })
       .then((response) => {

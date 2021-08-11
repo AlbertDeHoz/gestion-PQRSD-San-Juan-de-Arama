@@ -39,7 +39,7 @@ export default class CreateTramite extends Component {
             codigo: this.state.codigo,
         };
         axios
-          .post("http://localhost:5000/api/Tramites/create", tramiteObjet, {headers: headers})
+          .post(`${process.env.REACT_APP_HOST_API}/api/Tramites/create`, tramiteObjet, {headers: headers})
           .then((res) => console.log(res.data)).catch((error) => {
             console.log(error)
         });

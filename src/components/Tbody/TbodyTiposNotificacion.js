@@ -11,7 +11,7 @@ export default class TiposNotificacionTableRow extends Component {
 
   deleteTiposNotificacion() {
     axios.delete(
-        'http://localhost:5000/api/Tipos-Notificacion/delete/' + this.props.obj._id
+        `${process.env.REACT_APP_HOST_API}/api/Tipos-Notificacion/delete/` + this.props.obj._id
       )
       .then((res) => {
         console.log("Tipo de Notificacion borrada con exito");

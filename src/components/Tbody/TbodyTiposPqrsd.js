@@ -12,7 +12,7 @@ export default class TipoPqrsdTableRow extends Component {
 
   deleteTipoPqrsd() {
     axios.delete(
-        'http://localhost:5000/api/Tipospqrsd/delete/' + this.props.obj._id
+        `${process.env.REACT_APP_HOST_API}/api/Tipospqrsd/delete/` + this.props.obj._id
       )
       .then((res) => {
         console.log("PQRSD borrada con exito");

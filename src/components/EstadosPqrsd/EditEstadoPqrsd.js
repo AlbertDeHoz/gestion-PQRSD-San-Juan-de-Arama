@@ -18,7 +18,7 @@ export default class EditEstadosPqrsd extends Component {
     componentDidMount(){
         axios
         .get(
-          "http://localhost:5000/api/Estados-Pqrsd/edit/" +
+            `${process.env.REACT_APP_HOST_API}/api/Estados-Pqrsd/edit/` +
             this.props.match.params.id
         )
         .then((res) => {
@@ -39,7 +39,7 @@ export default class EditEstadosPqrsd extends Component {
         };
 
         axios.put(
-            "http://localhost:5000/api/Estados-Pqrsd/update/" + this.props.match.params.id, estadosPqrsdObjet
+            `${process.env.REACT_APP_HOST_API}/api/Estados-Pqrsd/update/` + this.props.match.params.id, estadosPqrsdObjet
         ).then((res) =>{
             console.log(res.data);
             console.log("Empresa de Transporte Actuaizado con éxito");

@@ -11,7 +11,7 @@ export default class estadosPqrsdTableRow extends Component {
 
   deleteEstadoPqrsd() {
     axios.delete(
-        'http://localhost:5000/api/Estados-Pqrsd/delete/' + this.props.obj._id
+      `${process.env.REACT_APP_HOST_API}/api/Estados-Pqrsd/delete/` + this.props.obj._id
       )
       .then((res) => {
         console.log("Estado Pqrsd borrado con exito");
