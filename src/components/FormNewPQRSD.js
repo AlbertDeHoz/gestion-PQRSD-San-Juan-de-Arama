@@ -61,6 +61,7 @@ export default class FormNewPQRSD extends Component {
     this.getInfoTiposPqrsd()
     this.getInfoMecanismosRecepcion()
     this.getInfoDependencias()
+    this.getInfoTramites()
 }
 
   manejarInput(e) {
@@ -238,21 +239,10 @@ getInfoTramites(){
                 name="descripcion"
                 className="form-control"
                 onChange={this.manejarInput}
-                placeholder="Dependencia"
+                placeholder="Descripción de la Pqrsd"
               />
             </div>
-            <div className="mb-3">
-              <label className="form-label">Tramite en SUIT al que pertenece</label>
-              <select
-                name="tramites"
-                className="form-select"
-                onChange={this.manejarInput}
-              >
-                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
-                {this.state.Tramites.map(res => <option key={res.name} value={res.name}>{res.codigo} - {res.name}</option>)}
-                <option key="Ninguno" value="Ninguno" defaultValue>Ninguno</option>
-                </select>
-            </div>
+            
 
             <div>
               {/* Campos automáticos */}
@@ -278,6 +268,18 @@ getInfoTramites(){
             </div>
           </div>
           <div className="col">
+          <div className="mb-3">
+              <label className="form-label">Tramite en SUIT al que pertenece</label>
+              <select
+                name="tramites"
+                className="form-select"
+                onChange={this.manejarInput}
+              >
+                <option key="0" value="Seleccione uno" defaultValue>Seleccione una opción</option>
+                {this.state.Tramites.map(res => <option key={res.name} value={res.name}>{res.codigo} - {res.name}</option>)}
+                <option key="Ninguno" value="Ninguno" defaultValue>Ninguno</option>
+                </select>
+            </div>
             <div className="mb-3">
               <label className="form-label">Email</label>
               <input
@@ -329,7 +331,7 @@ getInfoTramites(){
                 name="entidad"
                 className="form-control"
                 onChange={this.manejarInput}
-                placeholder="Email"
+                placeholder="Entidad del Solicitante"
               />
             </div>
             {/* <div>
@@ -343,7 +345,7 @@ getInfoTramites(){
                 onChange={this.manejarInput}
                 placeholder="no hay archivo seleccionado"
               />
-            </div> */}
+            </div> 
             <div className="mb-3">
               <label className="form-label">Tipo de Notificación</label>
               <input
@@ -353,7 +355,7 @@ getInfoTramites(){
                 onChange={this.manejarInput}
                 placeholder="no hay archivo seleccionado"
               />
-            </div>
+            </div>*/}
 
 
           </div>
