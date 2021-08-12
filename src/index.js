@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-window.$url_api = `http://localhost:3000`
+window.$url_api = `http://192.168.100.191:5000`
 
 ReactDOM.render(
   <BrowserRouter>
