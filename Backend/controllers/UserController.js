@@ -29,12 +29,19 @@ const uploadimg = multer({
         }
         cb("Archivo no valido")
     }
-}).single("myImage");
+}).single("imgPerfil");
+
 module.exports = {
 
     //Controlando la ruta list
-    list: async (req,res) =>{
-        //TODO
+    list: async (req,res, next) =>{
+        User.find((error, data) => {
+            if (error) {
+              return next(error)
+            } else {
+              res.json(data)
+            }
+          })
     },
 
     //Controlando la ruta login
@@ -62,18 +69,24 @@ module.exports = {
         //Validaciones
         const {error} = actualizarValidacion(req.body);
         if(error) return res.status(400).send(error.details[0].message);
-
         //validar Correo
         const user = await User.findOne({email: req.body.email});
-        if(user) return res.status(400).send('El email ya está registrado');
-
+        const userId = await User.findById(req.params)
+        const userIdD = await User.findById(req.user._id)
+        try{
+            if(toString(userIdD._id) == toString(userId._id)){
+                const {name, email} = req.body;
+                await User.findByIdAndUpdate(req.user._id,{
+                name: name,
+                email: email
+            });
+                res.json({mensaje: 'Usuario Actualizado'});
+        }
+        }catch (error) {
+            return res.status(400).send(`El email que intenta ingresar ya está registrado`);
+        }
         //Actualizar datos
-        const {name, email} = req.body;
-        await User.findByIdAndUpdate(req.user._id,{
-            name: name,
-            email: email
-        });
-        res.json({mensaje: 'Usuario Actualizado'});
+        
         
     },
 
@@ -85,8 +98,8 @@ module.exports = {
         if(error) return res.status(400).send(error.details[0].message);
         
         //Validación de correo existente
-        const emailValidate = await User.findOne({email: req.body.email});
-        if(emailValidate) return res.status(400).send("Email Registrado");
+        // const emailValidate = await User.findOne({email: req.body.email});
+        // if(emailValidate) return res.status(400).send("Email Registrado");
 
         //Encriptar clave
         const salt = await bcrypt.genSalt(10);
@@ -102,12 +115,21 @@ module.exports = {
             const userSave = await user.save();
             res.json({mensaje: "Usuario registrado correctamente"})
         }catch(err){
+            console.log(err)
             res.status(400).send(err)
         }
 
     },
-    delete: async (req,res) =>{
-        
+    delete: async (req,res,next) =>{
+    User.findByIdAndRemove(req.params._id, (error, data) => {
+        if (error) {
+          return next(error);
+        } else {
+          res.status(200).json({
+            msg: data
+          })
+        }
+      })
     },
     upload: async (req, res) =>{
         const url = `${req.protocol}://${req.get('host')}`;
@@ -120,7 +142,11 @@ module.exports = {
             await User.findByIdAndUpdate(_id, {
                 avatar: rutaimage,
             });
-            res.json({imagen: rutaimage})
+            res.json({mensaje: "Foto Actualizada con éxito"})
         });
+    },
+    userInfo: async (req,res)=>{
+        const user = await User.findById(req.user._id);
+        res.send(user);
     }
 }

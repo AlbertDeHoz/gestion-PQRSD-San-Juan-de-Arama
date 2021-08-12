@@ -1,6 +1,6 @@
 import FormNewPQRSD from "./FormNewPQRSD";
 
-const ModalAddNew = () => {
+const ModalAddNew = (props) => {
     return (
       <div className="modal-dialog modal-xl">
         <div className="modal-content">
@@ -16,7 +16,7 @@ const ModalAddNew = () => {
             ></button>
           </div>
           <div className="modal-body">
-            <FormNewPQRSD data={FormNewPQRSD.postData}/>
+            <FormNewPQRSD submitForm = {(e) => props.submitForm(e)} no_radicado = {props.no_radicado} />
           </div>
         </div>
       </div>

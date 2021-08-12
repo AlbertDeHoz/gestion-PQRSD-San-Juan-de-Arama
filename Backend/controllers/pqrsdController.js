@@ -1,25 +1,46 @@
 const Pqrsd = require("../models/Pqrsd");
+const User = require('../models/User')
 const validatePqrsd = require("../validate/pqrsd.validate");
 const { uploadDoc } = require("../handleUploads/uploadFiles");
 
 module.exports = {
   list: async (req, res) => {
-    const pqrsds = await Pqrsd.find();
-    res.status(200).json(pqrsds);
+    //const pqrsds = await Pqrsd.find();
+    const user = await User.findById(req.params).populate('pqrsds')
+    console.log(req.params)
+    res.send(user)
+    // res.status(200).json(pqrsds);
   },
-  update: async (req, res) => {
-    //TODO
+  manage: async (req, res) => {
+    const pqrsd = await Pqrsd.findOneAndUpdate(
+      { _id:req.params.id },
+      req.body,
+      { new: true }
+    )
+    console.log(pqrsd)
+    res.status(200).json(pqrsd)
   },
   create: async (req, res) => {
-    const { ...pqrsdData } = req.body;
-    const { error } = validatePqrsd.createPqrsd(pqrsdData);
+    // const { ...pqrsdData } = req.body;
+    // const { error } = validatePqrsd.createPqrsd(pqrsdData);
 
-    if (error) {
-      return res.status(400).send(error.details);
-    }
-    const pqrsd = new Pqrsd(pqrsdData);
-    const pqrsdSaved = await pqrsd.save();
-    return res.status(200).json(pqrsdSaved);
+    // if (error) {
+    //   return res.status(400).send(error.details);
+    //   console.log(error.details)
+    // }
+    const pqrsd = new Pqrsd(req.body);
+    //Buscar usuario para asignar pqrsd
+    const user = await User.findById(req.params);
+    //Asignar la pqrsd al usuario
+    pqrsd.usuario = user;
+    //Se guarda el carro
+    await pqrsd.save();
+    //Asignar la pqrsd en el usuario
+    user.pqrsds.push(pqrsd);
+    //Guardar el usuario
+    await user.save();
+    res.send(pqrsd);
+    //return res.status(200).json(pqrsdSaved);
   },
 
   uploadDocs: async (req, res) => {

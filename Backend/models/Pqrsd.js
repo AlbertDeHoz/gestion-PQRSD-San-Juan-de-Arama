@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let pqrsdSchema = new Schema(
+const pqrsdSchema = new Schema(
     {
         no_radicado:{
             type:String,
@@ -13,7 +13,7 @@ let pqrsdSchema = new Schema(
         t_pqrsd:{
             type: String,
         },
-        t_respuesta:{
+        dias_respuesta:{
             type: Number,
         },
         plazo_respuesta:{
@@ -80,10 +80,10 @@ let pqrsdSchema = new Schema(
             type: String,
         },
 
-        // usuario:{
-        //     type: Schema.Types.ObjecId,
-        //     ref: 'User',
-        // }
+        usuario:{
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        }
     },
     {
         collection: "pqrsd",

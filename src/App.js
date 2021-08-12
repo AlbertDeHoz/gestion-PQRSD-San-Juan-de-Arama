@@ -1,7 +1,6 @@
 import './App.css';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import Routes from './routes';
-import Aplicativo from './pages/Aplicativo';
 
 function App() {
   return (

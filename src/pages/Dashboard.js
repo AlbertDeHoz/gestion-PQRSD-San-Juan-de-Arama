@@ -38,14 +38,7 @@ export default class Dashboard extends React.Component {
       ],
     };
   }
-  componentDidMount(){
-    this.getPqrsd()
-  }
-  async getPqrsd (){
-    const response = await fetch(`${window.$url_api}/api/pqrsd/`);
-    const data = await response.json();
-    this.setState({pqrsdsData:data});
-  }
+
   render() {
     const url = window.location.pathname
     return (

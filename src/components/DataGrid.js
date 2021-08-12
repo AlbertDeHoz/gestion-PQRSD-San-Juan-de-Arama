@@ -34,7 +34,7 @@ const DataGrid = (props) => {
   return (
     <div className="card">
       <div className="card-body">
-        <table className="table table-light" {...getTableProps()}>
+        <table className="table table-hover" {...getTableProps()}>
           <thead>
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
@@ -57,6 +57,7 @@ const DataGrid = (props) => {
           <tbody {...getTableBodyProps()}>
             {initRow.map((row, i) => {
               prepareRow(row);
+              row.values.plazo_respuesta = new Date(row.values.plazo_respuesta).toDateString();
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
@@ -64,37 +65,39 @@ const DataGrid = (props) => {
                       <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
                     );
                   })}
-                  <td>{props.children}</td>
+                  <td><div onClick={() => props.clickOnPqrsdToManage(row.values)}>{props.children}</div></td>
                 </tr>
               );
             })}
           </tbody>
         </table>
-        <div className="pagination">
-          <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+        <div className="pagination mt-3">
+          <button className="page-link" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
             {"<<"}
           </button>{" "}
-          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+          <button className="page-link" onClick={() => previousPage()} disabled={!canPreviousPage}>
             {"<"}
           </button>{" "}
-          <button onClick={() => nextPage()} disabled={!canNextPage}>
+          <button className="page-link" onClick={() => nextPage()} disabled={!canNextPage}>
             {">"}
           </button>{" "}
           <button
+            className="page-link"
             onClick={() => gotoPage(pageCount - 1)}
             disabled={!canNextPage}
           >
             {">>"}
           </button>{" "}
-          <span>
+          <span className="ml-3 mr-3">
             Page{" "}
             <strong>
               {pageIndex + 1} of {pageOptions.length}
             </strong>{" "}
           </span>
-          <span>
-            | Go to page:{" "}
+          <span className="d-flex mr-3">
+            |   Go to page:{" "}
             <input
+              className="form-control ml-3"
               type="number"
               defaultValue={pageIndex + 1}
               onChange={(e) => {
@@ -105,6 +108,7 @@ const DataGrid = (props) => {
             />
           </span>{" "}
           <select
+          className="form-select-sm"
             value={pageSize}
             onChange={(e) => {
               setPageSize(Number(e.target.value));
