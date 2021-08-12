@@ -40,11 +40,10 @@ export default class index extends Component {
 
     render() {
         return (
-            <div className="container w-25 mx-auto pt-5">
+            <div className="container mx-auto pt-5">
                 <style dangerouslySetInnerHTML={{__html: "\n      .bd-placeholder-img {\n        font-size: 1.125rem;\n        text-anchor: middle;\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        user-select: none;\n      }\n\n      @media (min-width: 768px) {\n        .bd-placeholder-img-lg {\n          font-size: 3.5rem;\n        }\n      }\n    " }} />
                 {/* Custom styles for this template */}
-                <link href="signin.css" rel="stylesheet" />
-                <main className="form-signin">
+                <main className="form-signin col-10 mx-auto col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <form onSubmit={this.submitFormulario}>
                     <div className="text-center">
                     <img className="img-circle elevation-1 center" src={logoMenu} width="150" alt="Logo Alcaldía San Juan de Arama" />
