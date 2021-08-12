@@ -50,7 +50,6 @@ const DataGrid = (props) => {
                   </span>
                   </th>
                 ))}
-                <th>Gestionar</th>
               </tr>
             ))}
           </thead>
@@ -65,7 +64,6 @@ const DataGrid = (props) => {
                       <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
                     );
                   })}
-                  <td><div onClick={() => props.clickOnPqrsdToManage(row.values)}>{props.children}</div></td>
                 </tr>
               );
             })}
